@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#efe6d6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Cata">
+<title>Cata · Meine Weinkarte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#efe6d6;          /* limewash base */
+    --paper2:#e7dcc9;         /* slightly deeper */
+    --card:#fbf7ef;           /* raised card */
+    --ink:#2a1c24;            /* aubergine-black text */
+    --ink2:#6a5560;           /* muted ink */
+    --faint:#a08d84;
+    --line:#e0d3bf;           /* hairline on paper */
+    --line2:#efe6d9;
+    --cobalt:#1f5aa8;         /* azulejo blue — primary interactive */
+    --cobalt-deep:#163f73;
+    --cobalt-soft:#e4ecf6;
+    --gold:#d69a2c;           /* stars / owned */
+    --gold-soft:#f4e6c4;
+    /* wine hues */
+    --w-red:#7c2230; --w-white:#c8ab4f; --w-rose:#df9179; --w-natur:#b3773a; --w-sweet:#c68f26;
+    --shadow:0 1px 2px rgba(60,40,30,.05), 0 8px 24px -14px rgba(60,40,30,.28);
+    --r:16px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:Inter,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(140% 60% at 100% 0%, #f3ecdf 0%, transparent 55%),
+      radial-gradient(120% 50% at 0% 4%, #f0e8da 0%, transparent 50%),
+      var(--paper);
+    background-attachment:fixed;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:calc(env(safe-area-inset-bottom) + 40px);
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px}
+
+  /* ---------- header ---------- */
+  header{padding:26px 0 8px}
+  .brand{display:flex;align-items:center;gap:9px}
+  .glass{width:20px;height:26px;flex:none}
+  .eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--cobalt);font-weight:600}
+  h1{font-family:Fraunces,serif;font-weight:500;font-size:clamp(30px,8vw,44px);line-height:.98;letter-spacing:-.01em;margin:8px 0 0}
+  h1 em{font-style:italic;color:var(--w-red)}
+  .sub{margin-top:8px;color:var(--ink2);font-size:13.5px}
+
+  /* ---------- spectrum ---------- */
+  .spectrum{display:flex;gap:1.5px;height:46px;margin:16px 0 4px;border-radius:8px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer}
+  .band{flex:1;position:relative;transition:filter .15s, transform .15s;transform-origin:bottom}
+  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.14),rgba(255,255,255,.28))}
+  .band.mine{box-shadow:inset 0 -3px 0 var(--gold)}
+  .band:hover{filter:brightness(1.12)}
+  .spectrum-cap{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:2px 2px 0}
+
+  /* ---------- pairing hero ---------- */
+  .pair{margin:20px 0 6px}
+  .pair-q{font-family:Fraunces,serif;font-style:italic;font-size:19px;color:var(--ink);margin-bottom:11px}
+  .dishes{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+  .dishes::-webkit-scrollbar{display:none}
+  .dish{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:5px;width:66px;padding:11px 6px;border-radius:14px;background:var(--card);border:1px solid var(--line);cursor:pointer;transition:.14s;box-shadow:var(--shadow)}
+  .dish .emo{font-size:24px;line-height:1}
+  .dish .lbl{font-size:11px;color:var(--ink2);font-weight:500;text-align:center;line-height:1.1}
+  .dish:active{transform:scale(.95)}
+  .dish.on{background:var(--cobalt);border-color:var(--cobalt)}
+  .dish.on .lbl{color:#fff}
+
+  /* ---------- toolbar ---------- */
+  .tools{margin:18px 0 2px}
+  .tools-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .search{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px;border-radius:12px;padding:12px 14px;outline:none;box-shadow:var(--shadow)}
+  .search::placeholder{color:var(--faint)}
+  .search:focus{border-color:var(--cobalt)}
+  .filter-toggle{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink2);border-radius:12px;padding:12px 14px;font-size:13.5px;font-weight:600;cursor:pointer;box-shadow:var(--shadow);white-space:nowrap}
+  .filter-toggle.on{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+  .panel{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .panel.open{max-height:460px}
+  .panel-inner{padding:14px 2px 2px}
+  .grp-lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:10px 2px 7px}
+  .grp-lbl:first-child{margin-top:0}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{border:1px solid var(--line);background:var(--card);color:var(--ink2);font-size:13px;font-weight:500;padding:7px 12px;border-radius:999px;cursor:pointer;transition:.13s;display:inline-flex;align-items:center;gap:6px}
+  .chip:active{transform:scale(.96)}
+  .chip .rdot{width:9px;height:9px;border-radius:3px}
+  .chip.on{background:var(--cobalt);border-color:var(--cobalt);color:#fff;font-weight:600}
+  .chip.on .rdot{outline:1.5px solid #fff}
+  .chip.gold.on{background:var(--gold);border-color:var(--gold);color:#3a2a10}
+  .sortrow{display:flex;gap:8px;margin-top:14px}
+  .sortrow select{flex:1;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:11px;padding:10px 11px;font-size:13.5px;outline:none;box-shadow:var(--shadow)}
+  .reset{background:none;border:1px solid var(--line);color:var(--ink2);border-radius:11px;padding:10px 13px;font-size:13px;cursor:pointer}
+
+  /* ---------- stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0 6px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 12px;box-shadow:var(--shadow)}
+  .stat .num{font-family:Fraunces,serif;font-size:26px;font-weight:500;line-height:1}
+  .stat .cap{font-size:11px;color:var(--ink2);margin-top:5px;letter-spacing:.02em}
+  .stat.wide{grid-column:1 / -1;display:flex;align-items:center;gap:12px}
+  .stat.wide .num{font-size:20px}
+  .stat.wide .cap{margin-top:2px}
+  .stat .star{color:var(--gold)}
+
+  /* ---------- list ---------- */
+  .count{font-size:12px;color:var(--faint);margin:20px 2px 4px;letter-spacing:.02em}
+  .rhead{display:flex;align-items:center;gap:9px;margin:22px 2px 4px}
+  .rhead .tile{width:26px;height:26px;border-radius:7px;flex:none;position:relative;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+  .rhead .tile::before,.rhead .tile::after{content:"";position:absolute;background:rgba(255,255,255,.5)}
+  .rhead .tile::before{left:50%;top:3px;bottom:3px;width:1px;transform:translateX(-.5px)}
+  .rhead .tile::after{top:50%;left:3px;right:3px;height:1px;transform:translateY(-.5px)}
+  .rhead .rn{font-family:Fraunces,serif;font-size:17px;font-weight:500}
+  .rhead .rz{font-size:11px;color:var(--faint);margin-left:auto;letter-spacing:.08em;text-transform:uppercase}
+
+  .card{position:relative;display:flex;background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin:10px 0;overflow:hidden;cursor:pointer;box-shadow:var(--shadow);transition:transform .12s, box-shadow .2s}
+  .card:active{transform:scale(.995)}
+  .card.flash{box-shadow:0 0 0 2px var(--gold), var(--shadow)}
+  .pour{flex:none;width:8px;position:relative;background:var(--faint)}
+  .pour::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.18),transparent)}
+  .card.t-red .pour{background:var(--w-red)}.card.t-white .pour{background:var(--w-white)}
+  .card.t-rose .pour{background:var(--w-rose)}.card.t-natur .pour{background:var(--w-natur)}.card.t-sweet .pour{background:var(--w-sweet)}
+  .body{flex:1;padding:14px 14px 12px;min-width:0}
+  .ctop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+  .wname{font-family:Fraunces,serif;font-size:19px;font-weight:500;line-height:1.12}
+  .owned .wname::after{content:"★";color:var(--gold);font-size:13px;margin-left:6px;vertical-align:2px}
+  .winery{font-size:12.5px;color:var(--ink2);margin-top:3px}
+  .price{font-family:Fraunces,serif;font-size:15px;color:var(--ink);white-space:nowrap;text-align:right;font-weight:500}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}
+  .rchip{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--ink2);background:var(--paper);border:1px solid var(--line);padding:3px 8px;border-radius:7px}
+  .rchip .rdot{width:8px;height:8px;border-radius:2.5px}
+  .grape{font-size:11.5px;color:var(--ink2)}
+  .tag{font-size:10.5px;padding:3px 7px;border-radius:6px;border:1px solid var(--line);color:var(--ink2);background:var(--paper)}
+  .tag.score{color:var(--cobalt-deep);border-color:#cdddf0;background:var(--cobalt-soft);font-weight:600}
+  .tag.pill{color:#7a5a12;border-color:var(--gold-soft);background:#faf1da}
+  .food{margin-top:10px;font-size:18px;letter-spacing:3px;line-height:1}
+  .rate{display:flex;align-items:center;gap:3px;margin-top:12px}
+  .star{font-size:22px;line-height:1;color:#dccdbb;cursor:pointer;transition:transform .08s}
+  .star.on{color:var(--gold)}
+  .star:active{transform:scale(1.3)}
+  .rlabel{font-size:11px;color:var(--faint);margin-left:8px}
+  .rlabel .loc{color:var(--cobalt)}
+  .revert{margin-left:6px;color:var(--cobalt);font-size:11px;cursor:pointer;text-decoration:underline}
+
+  .detail{max-height:0;overflow:hidden;transition:max-height .32s ease}
+  .card.open .detail{max-height:700px}
+  .dinner{border-top:1px solid var(--line2);margin-top:13px;padding-top:12px}
+  .desc{font-size:14px;line-height:1.6;color:var(--ink)}
+  .desc b{color:var(--w-red);font-weight:600}
+  .desc i{color:var(--ink2)}
+  .pairlabels{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+  .plab{font-size:11px;color:var(--ink2);background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:3px 8px}
+  .note-lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:14px 0 6px}
+  .note{width:100%;min-height:60px;resize:vertical;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:11px;padding:10px 11px;font-size:14px;font-family:inherit;outline:none}
+  .note:focus{border-color:var(--cobalt);background:#fff}
+
+  .empty{text-align:center;color:var(--ink2);padding:48px 20px;font-size:14px;line-height:1.7}
+  .empty b{color:var(--ink)}
+
+  .legend{margin:26px 0 0;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+  .legend h3{margin:0 0 11px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);font-weight:700}
+  .lrow{display:flex;flex-wrap:wrap;gap:9px 15px;font-size:12.5px;color:var(--ink2)}
+  .lrow b{color:var(--ink);font-weight:500}
+  .swatch{width:22px;height:9px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:3px}
+  .foot{margin:18px 2px 0;font-size:11.5px;color:var(--faint);line-height:1.6;text-align:center}
+
+  .loading{text-align:center;padding:70px 20px;color:var(--ink2);font-size:15px}
+  .err{max-width:520px;margin:40px auto;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);line-height:1.6;font-size:14px}
+  .err b{color:var(--w-red)}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg class="glass" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M5 2h14c0 7-3.5 11-7 11S5 9 5 2Z" fill="#7c2230"/>
+        <path d="M5 2h14c0 1.2-.1 2.3-.3 3.4H5.3C5.1 4.3 5 3.2 5 2Z" fill="#9c3040"/>
+        <path d="M12 13v13M7 30h10" stroke="#2a1c24" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="eyebrow" id="eyebrow">Comunidad Valenciana</span>
+    </div>
+    <h1>Meine <em>Weinkarte</em></h1>
+    <div class="sub" id="sub"></div>
+
+    <div class="spectrum" id="spectrum" title="Dein Keller nach Weinfarbe — tippen zum Springen"></div>
+    <div class="spectrum-cap"><span>Weiß · Rosé</span><span>Natur · Rot · Süß</span></div>
+  </header>
+
+  <section class="pair">
+    <div class="pair-q">Wozu passt es heute?</div>
+    <div class="dishes" id="dishes"></div>
+  </section>
+
+  <section class="tools">
+    <div class="tools-head">
+      <input id="search" class="search" type="search" placeholder="Wein, Bodega oder Traube…" autocomplete="off">
+      <button class="filter-toggle" id="filterToggle">Filter</button>
+    </div>
+    <div class="panel" id="panel"><div class="panel-inner">
+      <div class="grp-lbl">Region</div><div class="chips" id="regionChips"></div>
+      <div class="grp-lbl">Typ</div><div class="chips" id="typeChips"></div>
+      <div class="grp-lbl">Meine</div><div class="chips" id="mineChips"></div>
+      <div class="sortrow">
+        <select id="sort">
+          <option value="region">Sortieren: Region</option>
+          <option value="myrating">Meine Bewertung ↓</option>
+          <option value="score">Kritiker-Punkte ↓</option>
+          <option value="price">Preis ↑</option>
+          <option value="name">Name A–Z</option>
+        </select>
+        <button class="reset" id="reset">Zurücksetzen</button>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="stats" id="stats"></section>
+
+  <div class="count" id="count"></div>
+  <div id="list"></div>
+
+  <div class="legend">
+    <h3>Legende</h3>
+    <div class="lrow" id="legendFood"></div>
+    <div class="lrow" id="legendWine" style="margin-top:12px"></div>
+    <div class="lrow" id="legendRegion" style="margin-top:12px"></div>
+  </div>
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+const DISHES=[["🍷","Solo"],["🍕","Pizza"],["🍝","Pasta"],["🍖","Grill"],["🥘","Paella"],["🦐","Fisch & Meer"],["🧀","Käse"]];
+const FOODLABEL={"🍷":"Solo / leicht","🍕":"Pizza","🍝":"Pasta","🍖":"Grill / Asado","🥘":"Paella (Fleisch)","🦐":"Fisch & Meer","🧀":"Käse","🥗":"Gemüse / leicht","🍮":"Dessert"};
+const TYPES=[["red","Rot"],["white","Weiß"],["rose","Rosé"],["natur","Natur"],["sweet","Süß"]];
+const TYPE_LABEL={red:"Rot",white:"Weiß",rose:"Rosé",natur:"Natur",sweet:"Süß"};
+const TYPE_VAR={red:"--w-red",white:"--w-white",rose:"--w-rose",natur:"--w-natur",sweet:"--w-sweet"};
+const TYPE_ORDER={white:0,rose:1,natur:2,red:3,sweet:4};
+
+let DOC=null, WINES=[], REGIONS={}, regionColor={};
+let activeFood=new Set(),activeRegion=new Set(),activeType=new Set(),ownedOnly=false,ratedOnly=false,query="",sortMode="region";
+
+// ---- personal overrides (per device) layered over Claude-maintained values ----
+const local={get:id=>{try{return JSON.parse(localStorage.getItem("wein_"+id)||"{}")}catch(e){return{}}},set:(id,v)=>{try{localStorage.setItem("wein_"+id,JSON.stringify(v))}catch(e){}}};
+function effRating(w){const l=local.get(w.id);return (l.rating!=null)?l.rating:(w.rating||0)}
+function effNote(w){const l=local.get(w.id);return (l.note!=null)?l.note:(w.note||"")}
+function isLocal(w){const l=local.get(w.id);return l.rating!=null||l.note!=null}
+
+// ---- region colors (data-driven; new Spanish regions auto-get a stable ceramic hue) ----
+const CERAMIC=["#C08A2E","#2E7D74","#BC5237","#3E6DA6","#8A6D3B","#9C5A8C","#5A8C57","#B07A2A","#4C7E8A","#A84B3A"];
+function hashHue(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h}
+function colorFor(key){
+  if(regionColor[key])return regionColor[key];
+  const meta=REGIONS[key];
+  let c = meta&&meta.color ? meta.color : CERAMIC[hashHue(key)%CERAMIC.length];
+  regionColor[key]=c;return c;
+}
+function regionName(key){return (REGIONS[key]&&REGIONS[key].name)||key}
+function regionZone(key){return (REGIONS[key]&&REGIONS[key].zone)||""}
+
+// ---------------- load ----------------
+fetch("wines.json?v="+Date.now()).then(r=>{if(!r.ok)throw 0;return r.json()}).then(doc=>{
+  DOC=doc;WINES=doc.wines||[];REGIONS=doc.regions||{};
+  boot();
+}).catch(()=>{
+  document.getElementById("list").innerHTML="";
+  document.querySelector(".wrap").insertAdjacentHTML("beforeend",
+   '<div class="err"><b>Weinliste nicht gefunden.</b><br>Die App lädt <code>wines.json</code> aus demselben Ordner. Das funktioniert live über GitHub&nbsp;Pages (oder einen lokalen Server). Beim reinen Doppelklick auf die Datei blockiert der Browser das Laden.</div>');
+});
+
+function boot(){
+  buildDishes();buildRegionChips();buildTypeChips();buildMineChips();buildLegend();
+  document.getElementById("eyebrow").textContent=(DOC.meta&&DOC.meta.subtitle)||"España";
+  document.getElementById("search").oninput=e=>{query=e.target.value.toLowerCase().trim();render()};
+  document.getElementById("sort").onchange=e=>{sortMode=e.target.value;render()};
+  document.getElementById("filterToggle").onclick=()=>{const p=document.getElementById("panel");const on=p.classList.toggle("open");document.getElementById("filterToggle").classList.toggle("on",on)};
+  document.getElementById("reset").onclick=resetAll;
+  buildSpectrum();render();
+}
+
+function buildDishes(){
+  const el=document.getElementById("dishes");
+  DISHES.forEach(([e,l])=>{
+    const b=document.createElement("button");b.className="dish";b.innerHTML=`<span class="emo">${e}</span><span class="lbl">${l}</span>`;
+    b.onclick=()=>{tog(activeFood,e);b.classList.toggle("on",activeFood.has(e));render()};
+    el.appendChild(b);
+  });
+}
+function buildRegionChips(){
+  const el=document.getElementById("regionChips");el.innerHTML="";
+  const keys=[...new Set(WINES.map(w=>w.region))].sort((a,b)=>regionName(a).localeCompare(regionName(b)));
+  keys.forEach(k=>{
+    const b=document.createElement("button");b.className="chip";
+    b.innerHTML=`<span class="rdot" style="background:${colorFor(k)}"></span>${regionName(k)}`;
+    b.onclick=()=>{tog(activeRegion,k);b.classList.toggle("on",activeRegion.has(k));render()};
+    el.appendChild(b);
+  });
+}
+function buildTypeChips(){
+  const el=document.getElementById("typeChips");el.innerHTML="";
+  const present=new Set(WINES.map(w=>w.type));
+  TYPES.filter(([k])=>present.has(k)).forEach(([k,l])=>{
+    const b=document.createElement("button");b.className="chip";b.textContent=l;
+    b.onclick=()=>{tog(activeType,k);b.classList.toggle("on",activeType.has(k));render()};
+    el.appendChild(b);
+  });
+}
+function buildMineChips(){
+  const el=document.getElementById("mineChips");el.innerHTML="";
+  const a=document.createElement("button");a.className="chip gold";a.textContent="★ Im Keller";
+  a.onclick=()=>{ownedOnly=!ownedOnly;a.classList.toggle("on",ownedOnly);render()};
+  const b=document.createElement("button");b.className="chip gold";b.textContent="⭐ Bewertet";
+  b.onclick=()=>{ratedOnly=!ratedOnly;b.classList.toggle("on",ratedOnly);render()};
+  el.appendChild(a);el.appendChild(b);
+}
+function tog(s,k){s.has(k)?s.delete(k):s.add(k)}
+function resetAll(){
+  activeFood.clear();activeRegion.clear();activeType.clear();ownedOnly=false;ratedOnly=false;query="";sortMode="region";
+  document.getElementById("search").value="";document.getElementById("sort").value="region";
+  document.querySelectorAll(".dish.on,.chip.on").forEach(c=>c.classList.remove("on"));
+  render();
+}
+
+// ---------------- spectrum ----------------
+function buildSpectrum(){
+  const el=document.getElementById("spectrum");el.innerHTML="";
+  const arr=[...WINES].sort((a,b)=>(TYPE_ORDER[a.type]-TYPE_ORDER[b.type])||a.priceNum-b.priceNum);
+  arr.forEach((w,i)=>{
+    const d=document.createElement("div");d.className="band"+(w.owned?" mine":"");
+    d.style.background=`var(${TYPE_VAR[w.type]||"--faint"})`;
+    d.style.animation="none";
+    d.title=w.n;
+    d.onclick=()=>jumpTo(w.id);
+    el.appendChild(d);
+  });
+}
+function jumpTo(id){
+  // clear filters so the wine is visible, then scroll+flash
+  resetAll();
+  requestAnimationFrame(()=>{
+    const c=document.querySelector('[data-id="'+CSS.escape(id)+'"]');
+    if(c){c.scrollIntoView({behavior:"smooth",block:"center"});c.classList.add("open","flash");setTimeout(()=>c.classList.remove("flash"),1400)}
+  });
+}
+
+// ---------------- filter + sort ----------------
+const scoreNum=w=>{const m=(w.score||"").match(/\d{2,3}/);return m?+m[0]:0};
+function filtered(){
+  return WINES.filter(w=>{
+    if(ownedOnly&&!w.owned)return false;
+    if(ratedOnly&&!effRating(w))return false;
+    if(activeRegion.size&&!activeRegion.has(w.region))return false;
+    if(activeType.size&&!activeType.has(w.type))return false;
+    if(activeFood.size&&![...activeFood].some(f=>w.food.includes(f)))return false;
+    if(query&&!((w.n+" "+w.w+" "+w.grape).toLowerCase().includes(query)))return false;
+    return true;
+  });
+}
+function sortWines(a){a=[...a];
+  if(sortMode==="myrating")a.sort((x,y)=>effRating(y)-effRating(x)||scoreNum(y)-scoreNum(x));
+  else if(sortMode==="score")a.sort((x,y)=>scoreNum(y)-scoreNum(x));
+  else if(sortMode==="price")a.sort((x,y)=>x.priceNum-y.priceNum);
+  else if(sortMode==="name")a.sort((x,y)=>x.n.localeCompare(y.n));
+  else a.sort((x,y)=>regionName(x.region).localeCompare(regionName(y.region))||(y.owned-x.owned)||x.w.localeCompare(y.w));
+  return a;
+}
+
+// ---------------- render ----------------
+const listEl=document.getElementById("list"),countEl=document.getElementById("count");
+function render(){
+  renderStats();
+  const arr=sortWines(filtered());listEl.innerHTML="";
+  countEl.textContent=arr.length+" "+(arr.length===1?"Wein":"Weine");
+  if(!arr.length){listEl.innerHTML='<div class="empty"><b>Kein Wein passt.</b><br>Tippe auf „Zurücksetzen" im Filter.</div>';return}
+  const grouped=(sortMode==="region");let cur=null;
+  arr.forEach(w=>{
+    if(grouped&&w.region!==cur){cur=w.region;listEl.appendChild(regionHead(w.region,arr.filter(x=>x.region===cur).length))}
+    listEl.appendChild(card(w));
+  });
+}
+function regionHead(key,n){
+  const h=document.createElement("div");h.className="rhead";
+  h.innerHTML=`<span class="tile" style="background:${colorFor(key)}"></span><span class="rn">${regionName(key)}</span><span class="rz">${regionZone(key)||n+" Weine"}</span>`;
+  return h;
+}
+function renderStats(){
+  const owned=WINES.filter(w=>w.owned);
+  const rated=WINES.filter(w=>effRating(w)>0);
+  const avg=rated.length?(rated.reduce((s,w)=>s+effRating(w),0)/rated.length):0;
+  const top=rated.slice().sort((a,b)=>effRating(b)-effRating(a))[0];
+  const untasted=owned.filter(w=>!effRating(w)).length;
+  const el=document.getElementById("stats");
+  el.innerHTML=
+    `<div class="stat"><div class="num">${owned.length}</div><div class="cap">im Keller ★</div></div>
+     <div class="stat"><div class="num">${rated.length}</div><div class="cap">bewertet</div></div>
+     <div class="stat"><div class="num">${WINES.length}</div><div class="cap">gesamt</div></div>`+
+    (top?`<div class="stat wide"><div><div class="num"><span class="star">★</span> ${avg.toFixed(1)}</div><div class="cap">Ø meine Bewertung · noch offen: ${untasted}</div></div><div style="margin-left:auto;text-align:right"><div style="font-family:Fraunces,serif;font-size:15px">${top.n}</div><div class="cap">dein Favorit</div></div></div>`
+        :`<div class="stat wide"><div><div class="cap">Noch keine Bewertung. Tippe die Sterne bei einem Wein an — oder sag mir per Claude deine Notiz, dann pflege ich sie zentral ein.</div></div></div>`);
+}
+function card(w){
+  const rating=effRating(w),note=effNote(w),loc=isLocal(w);
+  const el=document.createElement("div");
+  el.className="card t-"+w.type+(w.owned?" owned":"");el.dataset.id=w.id;
+  const pills=(w.pills||[]).map(p=>`<span class="tag pill">${p}</span>`).join("");
+  const score=w.score?`<span class="tag score">${w.score}</span>`:"";
+  const pairLabels=w.food.map(f=>`<span class="plab">${f} ${FOODLABEL[f]||""}</span>`).join("");
+  el.innerHTML=
+   `<div class="pour"></div><div class="body">
+     <div class="ctop"><div><div class="wname">${w.n}</div><div class="winery">${w.w}</div></div><div class="price">${w.price||""}</div></div>
+     <div class="meta"><span class="rchip"><span class="rdot" style="background:${colorFor(w.region)}"></span>${regionName(w.region)}</span><span class="grape">${w.grape}</span>${score}${pills}</div>
+     <div class="food">${w.food.join(" ")}</div>
+     <div class="rate"><div class="stars">${[1,2,3,4,5].map(i=>`<span class="star ${i<=rating?"on":""}" data-v="${i}">★</span>`).join("")}</div>
+       <span class="rlabel">${rating?`${rating}/5${loc?' <span class="loc">· lokal</span>':''}`:"noch nicht bewertet"}${loc?' <span class="revert">↺ zurück</span>':''}</span></div>
+     <div class="detail"><div class="dinner">
+       <div class="desc">${w.desc||""}</div>
+       ${pairLabels?`<div class="pairlabels">${pairLabels}</div>`:""}
+       <div class="note-lbl">Meine Notiz</div>
+       <textarea class="note" placeholder="Eigene Verkostungsnotiz…">${(note||"").replace(/</g,"&lt;")}</textarea>
+     </div></div>
+   </div>`;
+  el.addEventListener("click",e=>{
+    if(e.target.closest(".star")||e.target.closest(".note")||e.target.closest(".revert"))return;
+    el.classList.toggle("open");
+  });
+  el.querySelectorAll(".star").forEach(s=>s.addEventListener("click",e=>{
+    e.stopPropagation();const v=+s.dataset.v;const l=local.get(w.id);
+    l.rating=(effRating(w)===v)?0:v;local.set(w.id,l);
+    refreshCard(el,w);renderStats();
+  }));
+  const rev=el.querySelector(".revert");
+  if(rev)rev.addEventListener("click",e=>{e.stopPropagation();localStorage.removeItem("wein_"+w.id);refreshCard(el,w);renderStats()});
+  const noteEl=el.querySelector(".note");
+  noteEl.addEventListener("click",e=>e.stopPropagation());
+  noteEl.addEventListener("input",()=>{const l=local.get(w.id);l.note=noteEl.value;local.set(w.id,l)});
+  return el;
+}
+function refreshCard(el,w){
+  const rating=effRating(w),loc=isLocal(w);
+  el.querySelectorAll(".star").forEach(s=>s.classList.toggle("on",+s.dataset.v<=rating));
+  el.querySelector(".rlabel").innerHTML=(rating?`${rating}/5${loc?' <span class="loc">· lokal</span>':''}`:"noch nicht bewertet")+(loc?' <span class="revert">↺ zurück</span>':'');
+  const rev=el.querySelector(".revert");
+  if(rev)rev.addEventListener("click",e=>{e.stopPropagation();localStorage.removeItem("wein_"+w.id);refreshCard(el,w);renderStats()});
+}
+
+// ---------------- legend ----------------
+function buildLegend(){
+  document.getElementById("legendFood").innerHTML=DISHES.concat([["🥗","Gemüse"],["🍮","Dessert"]]).map(([e,l])=>`<span>${e} <b>${FOODLABEL[e]||l}</b></span>`).join("");
+  document.getElementById("legendWine").innerHTML=TYPES.map(([k,l])=>`<span><span class="swatch" style="background:var(${TYPE_VAR[k]})"></span> <b>${l}</b></span>`).join("")+' <span>★ <b>im Keller</b></span>';
+  const keys=[...new Set(WINES.map(w=>w.region))];
+  document.getElementById("legendRegion").innerHTML=keys.map(k=>`<span><span class="swatch" style="background:${colorFor(k)}"></span> <b>${regionName(k)}</b></span>`).join("");
+  const m=DOC.meta||{};
+  document.getElementById("sub").textContent=`${m.owned||0} im Keller · ${m.total||WINES.length} Weine · Stand ${m.updated||""}`;
+  document.getElementById("foot").innerHTML=`Sterne &amp; Notizen mit „· lokal" liegen nur auf diesem Gerät. Alles andere kommt aus <code>wines.json</code>.<br>Zum Startbildschirm hinzufügen: Browser-Menü → „Zum Startbildschirm".`;
+}
+</script>
+</body>
+</html>

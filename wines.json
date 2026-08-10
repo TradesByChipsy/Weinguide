@@ -1,0 +1,1873 @@
+{
+ "meta": {
+  "title": "Meine Weinkarte",
+  "subtitle": "Comunidad Valenciana → España",
+  "updated": "2026-08-10",
+  "total": 77,
+  "owned": 15
+ },
+ "regions": {
+  "alforins": {
+   "name": "Terres dels Alforins",
+   "do": "DO Valencia",
+   "zone": "Comunidad Valenciana",
+   "color": "#C08A2E"
+  },
+  "utiel": {
+   "name": "Utiel-Requena",
+   "do": "DO Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "color": "#2E7D74"
+  },
+  "alicante": {
+   "name": "DO Alicante",
+   "do": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "color": "#BC5237"
+  }
+ },
+ "wines": [
+  {
+   "id": "casa-los-frailes-los-frailes-monastrell",
+   "n": "Los Frailes Monastrell",
+   "w": "Casa Los Frailes",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell",
+   "price": "~7 €",
+   "priceNum": 7,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [
+    "Finca",
+    "öko"
+   ],
+   "desc": "Der ökologische 100-%-Monastrell-Einstieg des Guts (~7 €). Frisch, kirschig und leicht — ein ehrlicher Alltags-Roter mit sehr gutem Preis-Leistungs-Verhältnis.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "casa-los-frailes-los-frailes-garnacha-monastrell",
+   "n": "Los Frailes Garnacha/Monastrell",
+   "w": "Casa Los Frailes",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "60% Monastrell · 40% G. Tintorera",
+   "price": "~9 €",
+   "priceNum": 9,
+   "score": "",
+   "owned": true,
+   "food": [
+    "🍕",
+    "🍝",
+    "🥘",
+    "🍷"
+   ],
+   "pills": [
+    "Finca"
+   ],
+   "desc": "Der öko/biodynamische Einstiegs-Rote (60 % Monastrell, 40 % Garnacha Tintorera). Leicht, frisch und floral, sehr gut trinkbar — der klassische „para tomar por copas“-Typ.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "casa-los-frailes-blanc-de-trilogia",
+   "n": "Blanc de Trilogía",
+   "w": "Casa Los Frailes",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Sauv. Blanc · Muscat · Verdil",
+   "price": "~13 €",
+   "priceNum": 13,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "„Tri“ = drei Trauben (Sauvignon Blanc, Muscat, Verdil), teils im Fass. Komplex, fruchtig und frisch — einer der meistprämierten Weißweine der Comunidad Valenciana.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "casa-los-frailes-bilogia",
+   "n": "Bilogia",
+   "w": "Casa Los Frailes",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "50% Monastrell · 50% Syrah",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "",
+   "owned": true,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [
+    "Colección"
+   ],
+   "desc": "„Bi“ = zwei Trauben: 50 % Monastrell, 50 % Syrah, 12 Monate Fass. Der frischeste Rote des Guts — dunkle Frucht, Kirsche, Lakritz, runde Struktur. Das Etikett zeigt ein Familienfoto der Velázquez von 1907.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "casa-los-frailes-caliza",
+   "n": "Caliza",
+   "w": "Casa Los Frailes",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell",
+   "price": "~16 €",
+   "priceNum": 16,
+   "score": "93 Peñín",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Parzelle"
+   ],
+   "desc": "Parzellen-Wein: Monastrell von Kalk-Böden (caliza). Elegant und mineralisch — Teil der Boden-Trilogie. <b>93 Peñín.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "casa-los-frailes-dolomitas",
+   "n": "Dolomitas",
+   "w": "Casa Los Frailes",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell (Viñas Viejas)",
+   "price": "~16 €",
+   "priceNum": 16,
+   "score": "93 Peñín",
+   "owned": true,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Parzelle"
+   ],
+   "desc": "Parzellen-Wein: Monastrell von alten Reben auf Dolomit-Böden. Mineralisch, elegant und tief. Teil der Boden-Trilogie (mit Caliza & Rubificado) zum Nebeneinander-Verkosten. <b>93 Peñín.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "casa-los-frailes-rubificado",
+   "n": "Rubificado",
+   "w": "Casa Los Frailes",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Garnacha Tintorera",
+   "price": "~16 €",
+   "priceNum": 16,
+   "score": "94 Peñín",
+   "owned": true,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Parzelle"
+   ],
+   "desc": "Parzellen-Wein: 100 % Garnacha Tintorera (rotes Fruchtfleisch) von eisenroten Böden. Tiefdunkel, saftig und strukturiert — der höchstbewertete der Boden-Trilogie. <b>94 Peñín.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "casa-los-frailes-1771",
+   "n": "1771",
+   "w": "Casa Los Frailes",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell (alte Reben)",
+   "price": "~30 €",
+   "priceNum": 30,
+   "score": "94 Parker",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "alte Reben"
+   ],
+   "desc": "Das Flaggschiff von Casa Los Frailes, benannt nach dem Gründungsjahr: Monastrell von 65 Jahre alten Reben, subtil und tief. <b>94 Parker.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "rafael-cambra-cambra-dos",
+   "n": "Cambra Dos",
+   "w": "Rafael Cambra",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Cabernet · Monastrell · Garnacha",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "91 Parker",
+   "owned": false,
+   "food": [
+    "🍕",
+    "🍝",
+    "🥘",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Der zugängliche Einstieg von Rafael Cambra: Verschnitt aus Cabernet, Monastrell und Garnacha. Strukturiert, aber rund und trinkfreudig. <b>91 Parker.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "rafael-cambra-cambra-uno",
+   "n": "Cambra Uno",
+   "w": "Rafael Cambra",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell (alte Reben)",
+   "price": "~18–22 €",
+   "priceNum": 18,
+   "score": "93 Parker",
+   "owned": true,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "alte Reben"
+   ],
+   "desc": "Cambras Flaggschiff: 100 % Monastrell von 55 Jahre alten, wurzelechten Reben auf 700 m, 10 Monate französische Eiche. Dunkel, kraftvoll, würzig und tief — ein <b>vino de guarda</b> zum Dekantieren (45–60 Min Luft, 16 °C). <b>93 Parker.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "rafael-cambra-casa-labor",
+   "n": "Casa Labor",
+   "w": "Rafael Cambra",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Miguel de Arco",
+   "price": "~25 €",
+   "priceNum": 25,
+   "score": "94 Peñín",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Parzelle"
+   ],
+   "desc": "Parzellen-Wein von Rafael Cambra aus der seltenen Sorte Miguel de Arco. Sehr eigenständig und fein. <b>94 Peñín.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "rafael-cambra-la-forcalla-de-antonia",
+   "n": "La Forcallà de Antonia",
+   "w": "Rafael Cambra",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Forcallà (autochthon)",
+   "price": "~15 €",
+   "priceNum": 15,
+   "score": "95 Parker",
+   "owned": true,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "autochthon",
+    "Parzelle"
+   ],
+   "desc": "Cambras persönlichstes Projekt: 100 % der fast ausgestorbenen einheimischen Forcallà, die er seit 2011 rettet — benannt nach Antonia, der Winzerin der Parzelle. Hell, frisch, hochsäurig und floral, fast „atlantisch“. <b>95 Parker.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "celler-del-roure-moixent-vermell",
+   "n": "Vermell",
+   "w": "Celler del Roure · Moixent",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Mandó · Arcos",
+   "price": "~9 €",
+   "priceNum": 9,
+   "score": "92 Parker",
+   "owned": true,
+   "food": [
+    "🍷",
+    "🍝",
+    "🥘",
+    "🦐"
+   ],
+   "pills": [
+    "Amphore"
+   ],
+   "desc": "„Rot“ auf Valencianisch: aus den geretteten Sorten Mandó (70 %) und Arcos (30 %), im vergrabenen Tonkrug ausgebaut und <b>fast wie ein Rosé vinifiziert</b> — hell, frisch, mineralisch, nur ~13 %. Der ideale, kühl servierte „einfach-so“-Rotwein. <b>92+ Parker.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "celler-del-roure-moixent-cullerot",
+   "n": "Cullerot",
+   "w": "Celler del Roure · Moixent",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "weiße Cuvée (Verdil, PX, Macabeo…)",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "93 Parker",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🧀",
+    "🥗"
+   ],
+   "pills": [
+    "Amphore"
+   ],
+   "desc": "Der Amphoren-Weißwein von Celler del Roure aus einer komplexen Mischung lokaler weißer Sorten (Verdil, PX, Macabeo u. a.). Frisch, mineralisch, sehr sauber. <b>93+ Parker.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "celler-del-roure-moixent-safra",
+   "n": "Safrà",
+   "w": "Celler del Roure · Moixent",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Mandó · Arcos",
+   "price": "~12 €",
+   "priceNum": 12,
+   "score": "93 Parker",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [
+    "Amphore"
+   ],
+   "desc": "Amphoren-Roter von Celler del Roure aus Mandó und Arcos. Der Name spielt auf Safran an; frisch, würzig, elegant. <b>93 Parker.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "celler-del-roure-moixent-parotet",
+   "n": "Parotet",
+   "w": "Celler del Roure · Moixent",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Arcos · Mandó",
+   "price": "~18 €",
+   "priceNum": 18,
+   "score": "93 Parker",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [
+    "Amphore"
+   ],
+   "desc": "Amphoren-Roter von Celler del Roure, Arcos-geführt (mit Mandó). Das Libellen-Etikett (parotet = Libelle) ziert die ganze „alte Sorten“-Reihe. Fein, frisch, mineralisch. <b>93 Parker.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "celler-del-roure-moixent-les-alcusses",
+   "n": "Les Alcusses",
+   "w": "Celler del Roure · Moixent",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell · Tempranillo · Syrah · Cabernet",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍕",
+    "🍝",
+    "🥘",
+    "🍷"
+   ],
+   "pills": [
+    "klassisch/Holz"
+   ],
+   "desc": "Der zugängliche „kleine Bruder“ des Maduresa von Celler del Roure — klassischer Monastrell-Verschnitt im Holz. Mediterran, rund, gut trinkbar.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "celler-del-roure-moixent-maduresa",
+   "n": "Maduresa",
+   "w": "Celler del Roure · Moixent",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell (Guarda)",
+   "price": "~30 €",
+   "priceNum": 30,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "klassisch/Holz"
+   ],
+   "desc": "Der klassische Guarda-Wein von Celler del Roure: Monastrell im französischen Holz, auf Finesse und Frische gezielt. Elegant und reifefähig.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "daniel-belda-fontanars-dels-alforins-verdil",
+   "n": "Verdil",
+   "w": "Daniel Belda · Fontanars dels Alforins",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Verdil",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [
+    "autochthon weiß"
+   ],
+   "desc": "Daniel Beldas weißes Aushängeschild aus der fast verschwundenen autochthonen Verdil (er widmet ihr 14 ha, um sie zu retten). Frisch, floral, mineralisch.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "daniel-belda-fontanars-dels-alforins-cupatge",
+   "n": "Cupatge",
+   "w": "Daniel Belda · Fontanars dels Alforins",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Tempranillo · Monastrell · Syrah · Cabernet · Merlot",
+   "price": "~13 €",
+   "priceNum": 13,
+   "score": "",
+   "owned": true,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [
+    "Coupage"
+   ],
+   "desc": "Moderner 5-Sorten-Verschnitt (Tempranillo, Monastrell, Syrah, Cabernet, Merlot), 11 Monate Fass. Elegant und komplex — die zeitgemäße Neuinterpretation des klassischen Crianza. Daniel Belda gilt als „Vater“ der Terres dels Alforins.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "daniel-belda-fontanars-dels-alforins-pinot-noir",
+   "n": "Pinot Noir",
+   "w": "Daniel Belda · Fontanars dels Alforins",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Pinot Noir",
+   "price": "~15 €",
+   "priceNum": 15,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [
+    "hier ungewöhnlich"
+   ],
+   "desc": "Eine Rarität für das mediterrane Alforins: Daniel Belda arbeitet hier mit der burgundischen Pinot Noir — feiner, kühler Stil, ungewöhnlich für die Region.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "daniel-belda-fontanars-dels-alforins-garnatxa-ancestral-del-terrer",
+   "n": "Garnatxa Ancestral del Terrer",
+   "w": "Daniel Belda · Fontanars dels Alforins",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Garnacha Tintorera (alte Reben)",
+   "price": "~20 €",
+   "priceNum": 20,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "alte Reben"
+   ],
+   "desc": "Monovarietal aus einer der ältesten Garnacha-Tintorera-Parzellen der Region (Daniel Belda), 9 Monate im Fuder. Komplex, mineralisch, elegant.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "fil-loxera-cia-fontanars-sentada-sobre-la-bestia",
+   "n": "Sentada sobre la bestia",
+   "w": "Fil·loxera & Cía · Fontanars",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "natur",
+   "grape": "Monastrell · Tempranillo · G. Tintorera · Graciano · Malvasía",
+   "price": "~13 €",
+   "priceNum": 13,
+   "score": "91 Parker",
+   "owned": true,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [
+    "Coupage",
+    "natur"
+   ],
+   "desc": "Naturwein-Coupage (Monastrell-geführt, plus Tempranillo, Garnacha Tintorera, Graciano und etwas Malvasía), Wildhefe, minimale Eingriffe. Saftig, frisch und mediterran mit weichen Tanninen. Vom rebellischen Kleinprojekt Fil·loxera & Cía.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "fil-loxera-cia-fontanars-el-cordero-y-las-virgenes",
+   "n": "El Cordero y las Vírgenes",
+   "w": "Fil·loxera & Cía · Fontanars",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Coupage (Selektion)",
+   "price": "~27 €",
+   "priceNum": 27,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Foudre"
+   ],
+   "desc": "Der selektiertere große Bruder von „Sentada sobre la bestia“ (Fil·loxera): ähnlicher Coupage, aber länger im Fuder gereift. Ernster und tiefer.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "fil-loxera-cia-fontanars-la-mujer-caballo-azul",
+   "n": "La Mujer Caballo (Azul)",
+   "w": "Fil·loxera & Cía · Fontanars",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Arco (gerettet)",
+   "price": "~24 €",
+   "priceNum": 24,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [
+    "autochthon"
+   ],
+   "desc": "Naturwein-Rarität von Fil·loxera aus der geretteten Sorte Arco — teils nur wenige hundert Flaschen. Eigenwillig, hell, spannend.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "clos-de-lom-malvasia",
+   "n": "Malvasía",
+   "w": "Clos de Lôm",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Malvasía",
+   "price": "12,50 €",
+   "priceNum": 12.5,
+   "score": "90 Suckling",
+   "owned": true,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Der Weißwein-Botschafter des Guts, 100 % Malvasía. Frisch und floral (Orangenblüte) mit reifer Frucht wie Pfirsich und Litschi. Ein sauberer, eleganter Alltags-Weißer aus den Alforins-Höhen. <b>90 Suckling.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "clos-de-lom-monastrell-rosado",
+   "n": "Monastrell (Rosado)",
+   "w": "Clos de Lôm",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "rose",
+   "grape": "Monastrell · Rosé",
+   "price": "12,50 €",
+   "priceNum": 12.5,
+   "score": "",
+   "owned": true,
+   "food": [
+    "🍕",
+    "🦐",
+    "🥘",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Rosé aus 100 % Monastrell, aus einer einzigen Parzelle (Parcela del Pozo, 46 Jahre alte Reben). Hell und fruchtig (Erdbeere, Grapefruit), frisch mit lebendiger Säure. Der gesellige Sommer-Rosé des Guts.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "clos-de-lom-garnacha",
+   "n": "Garnacha",
+   "w": "Clos de Lôm",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Garnacha",
+   "price": "12,50 €",
+   "priceNum": 12.5,
+   "score": "",
+   "owned": true,
+   "food": [
+    "🥘",
+    "🍕",
+    "🍝",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "100 % Garnacha — rotfruchtig und charmant (Erdbeere, Kirsche), rund und saftig mit weichem Tannin. Der zugängliche Alltags-Rote; leicht gekühlt ein toller Paella-Begleiter.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "clos-de-lom-tempranillo",
+   "n": "Tempranillo",
+   "w": "Clos de Lôm",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Tempranillo",
+   "price": "12,50 €",
+   "priceNum": 12.5,
+   "score": "",
+   "owned": true,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "100 % Tempranillo aus der Finca — kirschig mit sanfter Struktur und feiner Frische. Ein unkomplizierter, ehrlicher Everyday-Rotwein.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "clos-de-lom-isidra",
+   "n": "Isidra",
+   "w": "Clos de Lôm",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Garnacha · Tempranillo (Coupage)",
+   "price": "~16 €",
+   "priceNum": 16,
+   "score": "91 Peñín",
+   "owned": true,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [
+    "bester Crianza DO Valencia"
+   ],
+   "desc": "Der Verschnitt-Wein des Guts: 85 % Garnacha (Frucht, mediterraner Charakter) + 15 % Tempranillo (Gerüst, Reifepotenzial), 12 Monate im Fass. Benannt zu Ehren der Frauen der Familie. <b>Bester Rotwein-Crianza der DO Valencia</b> — ihr ernsthaftester Wein.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "clos-de-lom-casa-las-monjas",
+   "n": "Casa Las Monjas",
+   "w": "Clos de Lôm",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell (rot)",
+   "price": "~20 €",
+   "priceNum": 20,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Reserva 24 Mon."
+   ],
+   "desc": "Der ernsthafte rote Monastrell von Clos de Lôm: Reserva mit 24 Monaten Barrique und 11 Monaten Flasche. Ihr kräftigstes, tiefstes Stück — der nächste Schritt nach der Basis-Gama.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-el-angosto-aielo-de-malferit-la-tribu",
+   "n": "La Tribu",
+   "w": "Bodegas El Angosto · Aielo de Malferit",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Rot-Cuvée (Einstieg)",
+   "price": "~8 €",
+   "priceNum": 8,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍕",
+    "🍝",
+    "🥘",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Rot-Cuvée (Einstieg)</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-el-angosto-aielo-de-malferit-angosto-blanco",
+   "n": "Angosto Blanco",
+   "w": "Bodegas El Angosto · Aielo de Malferit",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Verdil · Chardonnay · Viognier",
+   "price": "~12 €",
+   "priceNum": 12,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Weißwein aus <b>Verdil · Chardonnay · Viognier</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-el-angosto-aielo-de-malferit-almendros",
+   "n": "Almendros",
+   "w": "Bodegas El Angosto · Aielo de Malferit",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Cuvée (weiß & rot)",
+   "price": "~18–20 €",
+   "priceNum": 18,
+   "score": "93 Peñín",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Parzelle"
+   ],
+   "desc": "Rotwein aus <b>Cuvée (weiß & rot)</b>. Parzellen-Wein aus einer Einzellage. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-enguera-enguera-blanc-d-enguera",
+   "n": "Blanc d'Enguera",
+   "w": "Bodegas Enguera · Enguera",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Verdil · Sauvignon · Chardonnay",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Weißwein aus <b>Verdil · Sauvignon · Chardonnay</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-enguera-enguera-verdil-de-gel",
+   "n": "Verdil de Gel",
+   "w": "Bodegas Enguera · Enguera",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Verdil",
+   "price": "~12 €",
+   "priceNum": 12,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Weißwein aus <b>Verdil</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-enguera-enguera-megala",
+   "n": "Megala",
+   "w": "Bodegas Enguera · Enguera",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Syrah · Marselan · Monastrell",
+   "price": "~15 €",
+   "priceNum": 15,
+   "score": "91 Peñín",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Syrah · Marselan · Monastrell</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-enguera-enguera-paradigma",
+   "n": "Paradigma",
+   "w": "Bodegas Enguera · Enguera",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Tinto (Guarda)",
+   "price": "~18 €",
+   "priceNum": 18,
+   "score": "93 Peñín",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Tinto (Guarda)</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-los-pinos-fontanars-los-pinos-0",
+   "n": "Los Pinos 0%",
+   "w": "Bodegas Los Pinos · Fontanars",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "natur",
+   "grape": "ohne Sulfit-Zusatz",
+   "price": "~9 €",
+   "priceNum": 9,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [
+    "natur"
+   ],
+   "desc": "Rotwein aus <b>ohne Sulfit-Zusatz</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-los-pinos-fontanars-dominio-los-pinos",
+   "n": "Dominio Los Pinos",
+   "w": "Bodegas Los Pinos · Fontanars",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell · Garnacha",
+   "price": "~12 €",
+   "priceNum": 12,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell · Garnacha</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-los-pinos-fontanars-salvatella",
+   "n": "Salvatella",
+   "w": "Bodegas Los Pinos · Fontanars",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Cuvée (Guarda)",
+   "price": "~16 €",
+   "priceNum": 16,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Cuvée (Guarda)</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "cherubino-valsangiacomo-moscatel-de-valencia-cuva-vella",
+   "n": "Cuva Vella",
+   "w": "Cherubino Valsangiacomo · Moscatel de Valencia",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "sweet",
+   "grape": "Moscatel de licor (gereift)",
+   "price": "~18 €",
+   "priceNum": 18,
+   "score": "93 Peñín",
+   "owned": false,
+   "food": [
+    "🍮",
+    "🧀",
+    "🍷"
+   ],
+   "pills": [
+    "süß"
+   ],
+   "desc": "Süßwein aus <b>Moscatel de licor (gereift)</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "cherubino-valsangiacomo-moscatel-de-valencia-moscatel-joven",
+   "n": "Moscatel joven",
+   "w": "Cherubino Valsangiacomo · Moscatel de Valencia",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "sweet",
+   "grape": "Moscatel de Alejandría",
+   "price": "~8 €",
+   "priceNum": 8,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍮",
+    "🧀",
+    "🍷"
+   ],
+   "pills": [
+    "süß"
+   ],
+   "desc": "Süßwein aus <b>Moscatel de Alejandría</b>. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "cherubino-valsangiacomo-moscatel-de-valencia-ulises-micalet",
+   "n": "Ulises / Micalet",
+   "w": "Cherubino Valsangiacomo · Moscatel de Valencia",
+   "region": "alforins",
+   "regionName": "Terres dels Alforins",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Parzellen-Weine (trocken)",
+   "price": "~15–20 €",
+   "priceNum": 15,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Parzelle"
+   ],
+   "desc": "Rotwein aus <b>Parzellen-Weine (trocken)</b>. Parzellen-Wein aus einer Einzellage. Aus DO Valencia. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodega-mustiguillo-mestizaje-tinto",
+   "n": "Mestizaje tinto",
+   "w": "Bodega Mustiguillo",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Bobal · Syrah · Garnacha",
+   "price": "~13–15 €",
+   "priceNum": 13,
+   "score": "92 Parker",
+   "owned": false,
+   "food": [
+    "🍕",
+    "🍝",
+    "🥘",
+    "🍷"
+   ],
+   "pills": [
+    "deine erste Bobal"
+   ],
+   "desc": "Der Einstieg zu Mustiguillo und deine ideale erste Bobal: frisch, saftig, mineralisch, mit dunkler Frucht. Zeigt, warum Toni Sarrión die Bobal geadelt hat. <b>92 Parker.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodega-mustiguillo-mestizaje-blanco",
+   "n": "Mestizaje blanco",
+   "w": "Bodega Mustiguillo",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Merseguera u. a.",
+   "price": "~13 €",
+   "priceNum": 13,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Weißwein aus <b>Merseguera u. a.</b>. Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodega-mustiguillo-finca-terrerazo",
+   "n": "Finca Terrerazo",
+   "w": "Bodega Mustiguillo",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Bobal (alte Reben)",
+   "price": "~28–35 €",
+   "priceNum": 28,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Vino de Pago",
+    "alte Reben"
+   ],
+   "desc": "Das Flaggschiff von Mustiguillo — Bobal von alten Reben auf dem eigenen <b>Vino de Pago</b> El Terrerazo (erstes Pago der Region). Tief, mineralisch, langlebig.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodega-mustiguillo-quincha-corral",
+   "n": "Quincha Corral",
+   "w": "Bodega Mustiguillo",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Bobal (Einzelparzelle)",
+   "price": "~60–90 €",
+   "priceNum": 60,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Parzelle",
+    "Pago"
+   ],
+   "desc": "Mustiguillos Spitzen-Einzelparzelle, reine Bobal — einst auf der elBulli-Karte. Konzentriert und rar; die Krönung der Utiel-Requena-Bobal.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodega-mustiguillo-finca-calvestra",
+   "n": "Finca Calvestra",
+   "w": "Bodega Mustiguillo",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Merseguera (900 m)",
+   "price": "~22 €",
+   "priceNum": 22,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Weißwein aus <b>Merseguera (900 m)</b>. Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "hispano-suizas-requena-bassus",
+   "n": "Bassus",
+   "w": "Hispano+Suizas · Requena",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Bobal · Pinot Noir · Petit Verdot",
+   "price": "~15–20 €",
+   "priceNum": 15,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Bobal · Pinot Noir · Petit Verdot</b>. Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "hispano-suizas-requena-impromptu",
+   "n": "Impromptu",
+   "w": "Hispano+Suizas · Requena",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Sauvignon Blanc",
+   "price": "~15 €",
+   "priceNum": 15,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Weißwein aus <b>Sauvignon Blanc</b>. Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "hispano-suizas-requena-quod-superius",
+   "n": "Quod Superius",
+   "w": "Hispano+Suizas · Requena",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Blend",
+   "price": "~30 €",
+   "priceNum": 30,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Blend</b>. Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "chozas-carrascal-las-tres-las-ocho",
+   "n": "Las Tres / Las Ocho",
+   "w": "Chozas Carrascal",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Blends",
+   "price": "~15–30 €",
+   "priceNum": 15,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Blends</b>. Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "dominio-de-la-vega-bobal-cava",
+   "n": "Bobal / Cava",
+   "w": "Dominio de la Vega",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Bobal · Macabeo",
+   "price": "~8–18 €",
+   "priceNum": 8,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Bobal · Macabeo</b>. Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "vera-de-estenas-estenas-bobal",
+   "n": "Estenas Bobal",
+   "w": "Vera de Estenas",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Bobal",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Bobal</b>. Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "vera-de-estenas-casa-don-angel",
+   "n": "Casa Don Ángel",
+   "w": "Vera de Estenas",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Bobal (alte Reben)",
+   "price": "~20–25 €",
+   "priceNum": 20,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "alte Reben"
+   ],
+   "desc": "Rotwein aus <b>Bobal (alte Reben)</b>. Aus alten Reben. Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "vegalfaro-pago-los-balagueses-vegalfaro-caprasia-bobal",
+   "n": "Vegalfaro / Caprasia Bobal",
+   "w": "Vegalfaro · Pago Los Balagueses",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Bobal",
+   "price": "~9–12 €",
+   "priceNum": 9,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Bobal</b>. Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "vegalfaro-pago-los-balagueses-pago-los-balagueses-syrah",
+   "n": "Pago Los Balagueses Syrah",
+   "w": "Vegalfaro · Pago Los Balagueses",
+   "region": "utiel",
+   "regionName": "Utiel-Requena",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Syrah",
+   "price": "~22 €",
+   "priceNum": 22,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Vino de Pago"
+   ],
+   "desc": "Rotwein aus <b>Syrah</b>. Einzellagen-Spitze (Vino de Pago). Aus DO Utiel-Requena. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "enrique-mendoza-alfas-del-pi-einstieg-merlot-monastrell-u-a",
+   "n": "Einstieg (Merlot-Monastrell u. a.)",
+   "w": "Enrique Mendoza · Alfàs del Pi",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell · Merlot",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell · Merlot</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "enrique-mendoza-alfas-del-pi-estrecho-monastrell",
+   "n": "Estrecho Monastrell",
+   "w": "Enrique Mendoza · Alfàs del Pi",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell",
+   "price": "~20–25 €",
+   "priceNum": 20,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "enrique-mendoza-alfas-del-pi-santa-rosa",
+   "n": "Santa Rosa",
+   "w": "Enrique Mendoza · Alfàs del Pi",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Cabernet · Merlot · Syrah",
+   "price": "~20 €",
+   "priceNum": 20,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Cabernet · Merlot · Syrah</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "pepe-mendoza-casa-agricola-casa-agricola-blanco",
+   "n": "Casa Agrícola Blanco",
+   "w": "Pepe Mendoza · Casa Agrícola",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Moscatel · Macabeo · Airén",
+   "price": "~13 €",
+   "priceNum": 13,
+   "score": "92 Peñín",
+   "owned": true,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Trockener Alicante-Weißwein aus Moscatel de Alejandría, Macabeo und Airén. Aromatisch (Jasmin, Orangenschale) aber knochentrocken, mit salzig-mineralischem Zug. Terroir-Projekt von Pepe Mendoza. <b>92 Peñín.</b>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "pepe-mendoza-casa-agricola-la-tremenda",
+   "n": "La Tremenda",
+   "w": "Pepe Mendoza · Casa Agrícola",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell",
+   "price": "~13 €",
+   "priceNum": 13,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "pepe-mendoza-casa-agricola-pureza",
+   "n": "Pureza",
+   "w": "Pepe Mendoza · Casa Agrícola",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Moscatel (Tonkrug)",
+   "price": "~18 €",
+   "priceNum": 18,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🧀",
+    "🥗"
+   ],
+   "pills": [
+    "Amphore"
+   ],
+   "desc": "100 % Moscatel de Alejandría, im Tonkrug mit Schalenkontakt ausgebaut — ein <b>Orange-Wein</b> (brisat). Duftet süß (Rosen, Orangenblüte), schmeckt aber trocken und herzhaft (Mandel, Oliven, salzig). Zählt zu den 10 besten Moscateln der Welt.",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "pepe-mendoza-casa-agricola-giro-de-abargues",
+   "n": "Giró de Abargues",
+   "w": "Pepe Mendoza · Casa Agrícola",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Giró",
+   "price": "~30 €",
+   "priceNum": 30,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Parzelle"
+   ],
+   "desc": "Rotwein aus <b>Giró</b>. Parzellen-Wein aus einer Einzellage. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "pepe-mendoza-casa-agricola-el-veneno",
+   "n": "El Veneno",
+   "w": "Pepe Mendoza · Casa Agrícola",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell",
+   "price": "~30 €",
+   "priceNum": 30,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Parzelle"
+   ],
+   "desc": "Rotwein aus <b>Monastrell</b>. Parzellen-Wein aus einer Einzellage. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bernabe-navarro-villena-beryna",
+   "n": "Beryna",
+   "w": "Bernabé Navarro · Villena",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell · Cabernet · Syrah",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍕",
+    "🍝",
+    "🥘",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell · Cabernet · Syrah</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bernabe-navarro-villena-casa-balaguer",
+   "n": "Casa Balaguer",
+   "w": "Bernabé Navarro · Villena",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell · Garnacha",
+   "price": "~18 €",
+   "priceNum": 18,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell · Garnacha</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bernabe-navarro-villena-curro",
+   "n": "Curro",
+   "w": "Bernabé Navarro · Villena",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell u. a.",
+   "price": "~25 €",
+   "priceNum": 25,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell u. a.</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-volver-tarima",
+   "n": "Tarima",
+   "w": "Bodegas Volver",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell",
+   "price": "~6–7 €",
+   "priceNum": 6,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍕",
+    "🍝",
+    "🥘",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bodegas-volver-tarima-hill",
+   "n": "Tarima Hill",
+   "w": "Bodegas Volver",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell (alte Reben)",
+   "price": "~14 €",
+   "priceNum": 14,
+   "score": "92–94 Parker",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "alte Reben"
+   ],
+   "desc": "Rotwein aus <b>Monastrell (alte Reben)</b>. Aus alten Reben. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "sierra-salinas-villena-mg-wines-mo-salinas",
+   "n": "Mo Salinas",
+   "w": "Sierra Salinas · Villena (MG Wines)",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍕",
+    "🍝",
+    "🥘",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "sierra-salinas-villena-mg-wines-puerto-salinas",
+   "n": "Puerto Salinas",
+   "w": "Sierra Salinas · Villena (MG Wines)",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell · Cabernet",
+   "price": "~18 €",
+   "priceNum": 18,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell · Cabernet</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "sierra-salinas-villena-mg-wines-1237",
+   "n": "1237",
+   "w": "Sierra Salinas · Villena (MG Wines)",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell (alte Reben)",
+   "price": "~28 €",
+   "priceNum": 28,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "alte Reben"
+   ],
+   "desc": "Rotwein aus <b>Monastrell (alte Reben)</b>. Aus alten Reben. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bocopa-petrer-coop-marina-alta",
+   "n": "Marina Alta",
+   "w": "Bocopa · Petrer (Coop.)",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "white",
+   "grape": "Moscatel (trocken!)",
+   "price": "~6 €",
+   "priceNum": 6,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🦐",
+    "🥗",
+    "🍷"
+   ],
+   "pills": [],
+   "desc": "Weißwein aus <b>Moscatel (trocken!)</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bocopa-petrer-coop-laudum-nature",
+   "n": "Laudum Nature",
+   "w": "Bocopa · Petrer (Coop.)",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell",
+   "price": "~10 €",
+   "priceNum": 10,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🍝",
+    "🥘"
+   ],
+   "pills": [],
+   "desc": "Rotwein aus <b>Monastrell</b>. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  },
+  {
+   "id": "bocopa-petrer-coop-alone-fondillon",
+   "n": "Alone Fondillón",
+   "w": "Bocopa · Petrer (Coop.)",
+   "region": "alicante",
+   "regionName": "DO Alicante",
+   "zone": "Comunidad Valenciana",
+   "type": "red",
+   "grape": "Monastrell (10 Jahre)",
+   "price": "~35 €",
+   "priceNum": 35,
+   "score": "",
+   "owned": false,
+   "food": [
+    "🍖",
+    "🧀"
+   ],
+   "pills": [
+    "Fondillón"
+   ],
+   "desc": "Rotwein aus <b>Monastrell (10 Jahre)</b>. Aus alten Reben. Aus DO Alicante. <i>(Auto-Kurznotiz — sag Bescheid, wenn du zu diesem Wein eine ausführliche Beschreibung möchtest.)</i>",
+   "rating": 0,
+   "note": ""
+  }
+ ]
+}
