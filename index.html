@@ -3,457 +3,452 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#1c130f">
+<meta name="theme-color" content="#ffffff">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Botellero">
-<title>El Botellero · Mi Bodega</title>
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Cata">
+<title>Cata · Mein Weinkeller</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
 <!--
-THESIS: The app IS the physical botellero (the terracotta diamond-cubby wine rack found in Spanish bodegas), not a list dressed as one — every bottle is a hole you look into, not a card you scroll past.
-OWN-WORLD: Dim cellar-earth canvas (#1c130f) so terracotta cubbies glow forward. A wine's type colors its capsule ring — identity that survives at zero rating. Owned = a filled cubby; not-yet-owned = an empty dashed ring. Rating = a conic "level" fill inside the capsule, one glyph carrying type + ownership + rating at once.
-STORY: The owner scans their rack the way they would in real life — full slots vs. empty slots — before drilling into one bottle via a slide-up etiqueta sheet.
-FIRST VIEWPORT: hanging etiqueta-tag filters (status + type) directly visible, search, then region shelves of the honeycomb-style rack.
-FORM: Regal-Raster / "El Botellero" — user-selected structural direction (Botellero de Barro material world), replacing the prior card-feed skeleton entirely.
+THESIS: Two questions, not one list. The app opens on the question you actually have at the rack — "what goes with dinner?" or "what do I still have?" — and answers it with a dense, scannable register. Refuses the card-feed skeleton (chips → stat tiles → rounded shadow cards) that every generic app ships.
+OWN-WORLD: White ground, cream second surface (#F7F3E8), one saturated wine magenta (#A81243) as the only accent. Display is Cormorant Garamond Bold Italic, set very large; body is the plain system stack. Flat: hairlines, 2-4px radii, no shadows. Wine type lives as a 3px stripe at the row's left edge — solid when the bottle is in the cellar, hairline when it is not.
+STORY: Pick the dish or open the cellar; read 15+ wines at a glance; tap one to open its note in place.
+FIRST VIEWPORT: mode switch, the question set huge in italic serif, the dish row or scope toggle, then rows starting above the fold.
+FORM: dense register + editorial display type, derived from the user's own reference (enolisa.com) — mobile-first, desktop is a widened variant.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 -->
 <style>
 :root{
-  --bg:#181009; --bg2:#241a14; --bg3:#120c07;
-  --clay:#c06b3d; --clay-deep:#8a4726; --clay-rim:#5a2c17;
-  --cream:#f2e7d8; --cream-soft:#b8a795; --faint:#7a6b5c;
-  --line:rgba(242,231,216,.12); --line2:rgba(242,231,216,.2);
-  --w-red:#e0435c; --w-white:#e8d34a; --w-rose:#ff8aa8; --w-natur:#e0973f; --w-sweet:#d98f1f;
-  --shadow:0 10px 26px -14px rgba(0,0,0,.6);
-  --r:16px;
+  --paper:#ffffff;
+  --cream:#f7f3e8;
+  --cream-deep:#efe9d8;
+  --ink:#1a1418;
+  --ink2:#6b6560;
+  --faint:#9a938c;
+  --line:#e6e0d4;
+  --line-strong:#d5cdbd;
+  --accent:#a81243;
+  --accent-soft:#fbeaf0;
+  --w-red:#8e2036; --w-white:#c9a227; --w-rose:#e08a7d; --w-natur:#6b8e4e; --w-sweet:#b5651d;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0}
 body{
-  font-family:Archivo,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-  color:var(--cream);
-  background:
-    radial-gradient(90% 45% at 50% -8%, rgba(192,107,61,.12), transparent 60%),
-    radial-gradient(70% 35% at 100% 10%, rgba(192,107,61,.06), transparent 55%),
-    var(--bg);
-  background-attachment:fixed;
-  min-height:100vh;
-  -webkit-font-smoothing:antialiased;
-  padding-bottom:calc(env(safe-area-inset-bottom) + 40px);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color:var(--ink);background:var(--paper);
+  min-height:100vh;-webkit-font-smoothing:antialiased;
+  font-size:16px;line-height:1.45;
+  padding-bottom:calc(env(safe-area-inset-bottom) + 48px);
 }
-.wrap{max-width:720px;margin:0 auto;padding:0 16px}
-a,button,input,textarea{font-family:inherit}
-:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+.wrap{max-width:560px;margin:0 auto;padding:0 18px}
+button,input,select,textarea{font-family:inherit;font-size:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-/* ---------- header ---------- */
-header{padding:26px 0 6px}
-.brand{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);font-weight:700}
-.brand::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--clay);flex:none}
-h1{font-family:Archivo,sans-serif;font-weight:900;font-size:clamp(30px,7vw,40px);text-transform:uppercase;line-height:.95;margin:12px 0 0;letter-spacing:-.01em;color:var(--cream)}
-.sub{margin-top:9px;color:var(--cream-soft);font-size:12.5px}
+/* ---------- brand + mode switch ---------- */
+.brand{display:flex;align-items:baseline;gap:8px;padding:20px 0 0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.brand b{color:var(--accent);font-weight:700;letter-spacing:.18em}
 
-/* ---------- hanging etiqueta filters — always visible ---------- */
-.tagrow{display:flex;gap:10px;margin:22px 0 0;overflow-x:auto;padding:6px 2px 12px;scrollbar-width:none}
-.tagrow::-webkit-scrollbar{display:none}
-.etiqueta{flex:none;position:relative;padding-top:9px;background:none;border:none}
-.etiqueta::before{content:"";position:absolute;top:0;left:50%;width:1px;height:9px;background:var(--faint)}
-.etiqueta .tbtn{display:flex;align-items:center;gap:6px;background:var(--bg2);border:1px solid var(--line2);border-radius:3px 9px 9px 3px;padding:8px 13px 8px 10px;font-size:12.5px;font-weight:600;color:var(--cream-soft);cursor:pointer;white-space:nowrap;position:relative}
-.etiqueta .tbtn::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--bg);border:1px solid var(--faint);flex:none}
-.etiqueta .dot{width:10px;height:10px;border-radius:50%;flex:none}
-.etiqueta.on .tbtn{background:var(--clay);color:var(--bg3);border-color:var(--clay);font-weight:700}
-.etiqueta.on .tbtn::before{background:var(--bg3);border-color:var(--bg3)}
+.modes{display:flex;gap:0;margin:16px 0 0;border-bottom:1.5px solid var(--line-strong)}
+.modes button{flex:1;background:none;border:none;padding:11px 4px 10px;font-size:14px;font-weight:600;color:var(--faint);cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1.5px;transition:color .15s}
+.modes button.on{color:var(--accent);border-bottom-color:var(--accent)}
 
-.searchrow{display:flex;align-items:center;gap:8px;margin-top:2px;border-bottom:1.5px solid var(--line2);padding-bottom:9px}
-.searchrow .ic{color:var(--faint);font-size:14px}
-.searchrow input{flex:1;background:none;border:none;color:var(--cream);font-size:15px;outline:none;padding:4px 0}
+/* ---------- the question ---------- */
+h1{
+  font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:700;
+  font-size:clamp(38px,12vw,54px);line-height:.96;letter-spacing:-.01em;
+  margin:18px 0 0;color:var(--ink);
+}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{margin:8px 0 0;font-size:13px;color:var(--ink2)}
+
+/* ---------- dish row ---------- */
+.dishes{display:flex;gap:7px;overflow-x:auto;margin:20px -18px 0;padding:2px 18px 6px;scrollbar-width:none}
+.dishes::-webkit-scrollbar{display:none}
+.dish{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:4px;width:62px;padding:9px 4px;border:1px solid var(--line);border-radius:3px;background:var(--paper);cursor:pointer}
+.dish .emo{font-size:21px;line-height:1}
+.dish .lbl{font-size:10.5px;color:var(--ink2);text-align:center;line-height:1.15;font-weight:500}
+.dish.on{background:var(--accent);border-color:var(--accent)}
+.dish.on .lbl{color:#fff}
+
+/* ---------- scope + filters ---------- */
+.scope{display:flex;margin:14px 0 0;border:1px solid var(--line-strong);border-radius:3px;overflow:hidden}
+.scope button{flex:1;background:var(--paper);border:none;padding:9px 6px;font-size:13px;font-weight:600;color:var(--ink2);cursor:pointer}
+.scope button+button{border-left:1px solid var(--line-strong)}
+.scope button.on{background:var(--accent);color:#fff}
+
+.searchrow{display:flex;align-items:center;gap:8px;margin:11px 0 0;border-bottom:1.5px solid var(--line-strong);padding-bottom:7px}
+.searchrow .ic{color:var(--faint);font-size:15px;line-height:1}
+.searchrow input{flex:1;background:none;border:none;outline:none;padding:3px 0;font-size:16px;color:var(--ink)}
 .searchrow input::placeholder{color:var(--faint)}
 
-.morelink{display:inline-block;margin:13px 2px 0;font-size:11.5px;color:var(--cream-soft);text-decoration:underline;text-underline-offset:3px;cursor:pointer;background:none;border:none;padding:0}
+.typefilters{display:flex;flex-wrap:wrap;gap:6px;margin:11px 0 0}
+.tf{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--paper);border-radius:3px;padding:5px 10px;font-size:12.5px;font-weight:500;color:var(--ink2);cursor:pointer}
+.tf .sw{width:9px;height:9px;border-radius:1px;flex:none}
+.tf.on{background:var(--ink);border-color:var(--ink);color:#fff}
 
-.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
-.panel.open{grid-template-rows:1fr}
-.panel-inner{overflow:hidden;padding:14px 2px 4px}
-.grp-lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:12px 2px 8px}
-.grp-lbl:first-child{margin-top:0}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line2);background:var(--bg2);color:var(--cream-soft);font-size:12.5px;font-weight:500;padding:7px 12px;border-radius:9px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-.chip .rdot{width:9px;height:9px;border-radius:3px}
-.chip.on{background:var(--clay);border-color:var(--clay);color:var(--bg3);font-weight:700}
-.sortrow{display:flex;gap:8px;margin-top:14px}
-.sortrow select{flex:1;background:var(--bg2);color:var(--cream);border:1px solid var(--line2);border-radius:10px;padding:10px 11px;font-size:13.5px;outline:none}
-.reset{background:none;border:1px solid var(--line2);color:var(--cream-soft);border-radius:10px;padding:10px 13px;font-size:13px;cursor:pointer}
+.metarow{display:flex;align-items:center;gap:10px;margin:12px 0 0;font-size:11.5px;color:var(--faint)}
+.metarow select{margin-left:auto;background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:5px 7px;font-size:12px;color:var(--ink2);outline:none}
+.metarow .reset{background:none;border:none;color:var(--accent);font-size:12px;cursor:pointer;text-decoration:underline;padding:0}
 
-/* ---------- tally ---------- */
-.tally{display:flex;gap:22px;margin:24px 2px 2px;font-size:11.5px;color:var(--cream-soft);flex-wrap:wrap}
-.tally b{color:var(--clay);font-family:Archivo,sans-serif;font-weight:900;font-size:20px;display:block;line-height:1}
-.tally .fav{margin-left:auto;text-align:right}
-.tally .fav .lbl{display:block;color:var(--faint);font-size:10px;text-transform:uppercase;letter-spacing:.06em}
-.tally .fav .name{font-weight:700;color:var(--cream);font-size:13px}
+/* ---------- group heading ---------- */
+.ghead{display:flex;align-items:baseline;gap:8px;margin:18px 0 0;padding-bottom:5px;border-bottom:1.5px solid var(--ink)}
+.ghead .gn{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.ghead .gc{margin-left:auto;font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
 
-.count{font-size:11.5px;color:var(--faint);margin:22px 2px 2px}
+/* ---------- dense rows ---------- */
+.row{border-bottom:1px solid var(--line)}
+.rowhead{display:flex;align-items:stretch;gap:10px;width:100%;background:none;border:none;padding:9px 0;text-align:left;cursor:pointer;color:inherit}
+.stripe{width:3px;flex:none;border-radius:2px;background:var(--faint)}
+.row.t-red .stripe{background:var(--w-red)}
+.row.t-white .stripe{background:var(--w-white)}
+.row.t-rose .stripe{background:var(--w-rose)}
+.row.t-natur .stripe{background:var(--w-natur)}
+.row.t-sweet .stripe{background:var(--w-sweet)}
+.row:not(.owned) .stripe{background:none;box-shadow:inset 0 0 0 1px currentColor;opacity:.3}
+.row:not(.owned).t-red .stripe{color:var(--w-red)}
+.row:not(.owned).t-white .stripe{color:var(--w-white)}
+.row:not(.owned).t-rose .stripe{color:var(--w-rose)}
+.row:not(.owned).t-natur .stripe{color:var(--w-natur)}
+.row:not(.owned).t-sweet .stripe{color:var(--w-sweet)}
+.rmain{flex:1;min-width:0}
+.rname{display:block;font-size:14.5px;font-weight:600;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rsub{display:block;font-size:11.5px;color:var(--ink2);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rright{flex:none;text-align:right;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:3px}
+.rprice{font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+.rdots{display:flex;gap:2px}
+.rdots i{width:5px;height:5px;border-radius:50%;background:var(--accent);display:block}
+.rscore{font-size:10.5px;color:var(--accent);font-weight:700}
+.row.open .rowhead{background:var(--cream)}
 
-/* ---------- shelf / rack ---------- */
-.shelf{margin-top:30px}
-.shelf-lbl{display:flex;align-items:center;gap:9px;margin:0 2px 14px}
-.shelf-lbl .plank{flex:1;height:6px;background:linear-gradient(180deg,var(--clay-rim),var(--bg3));border-radius:2px}
-.shelf-lbl .rn{font-family:Archivo,sans-serif;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--cream);white-space:nowrap}
-.shelf-lbl .rc{font-size:10.5px;color:var(--faint)}
+/* ---------- inline detail ---------- */
+.rdetail{display:none;padding:2px 0 16px 13px}
+.row.open .rdetail{display:block}
+.desc{font-size:13.5px;line-height:1.6;color:var(--ink2)}
+.pairs{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.plab{font-size:11px;color:var(--ink2);background:var(--cream);border-radius:2px;padding:3px 7px}
+.dmeta{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.dtag{font-size:10.5px;color:var(--ink2);border:1px solid var(--line);border-radius:2px;padding:2px 7px}
+.dtag.score{color:#fff;background:var(--accent);border-color:var(--accent);font-weight:600}
+.rate{display:flex;align-items:center;gap:6px;margin-top:14px}
+.rate .stars{display:flex;gap:4px}
+.rate .st{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line-strong);background:none;cursor:pointer;padding:0}
+.rate .st.on{background:var(--accent);border-color:var(--accent)}
+.rlabel{font-size:11.5px;color:var(--faint)}
+.rlabel .loc{color:var(--accent)}
+.revert{background:none;border:none;color:var(--accent);font-size:11.5px;cursor:pointer;text-decoration:underline;padding:0;margin-left:7px}
+.note-lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:14px 0 5px}
+.note{width:100%;min-height:56px;resize:vertical;background:var(--cream);border:1px solid var(--line);border-radius:3px;padding:9px 10px;font-size:14px;color:var(--ink);outline:none}
+.note:focus{border-color:var(--accent);background:var(--paper)}
 
-.rack{display:flex;flex-wrap:wrap;gap:18px 12px;padding:4px 0}
-.cubby{width:76px;flex:none;display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;background:none;border:none;padding:0;color:inherit}
-.hole{width:70px;height:70px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--clay-rim), var(--bg3) 72%);box-shadow:inset 0 6px 10px rgba(0,0,0,.55), inset 0 -2px 3px rgba(242,231,216,.05);display:flex;align-items:center;justify-content:center;position:relative;transition:transform .12s}
-.cubby:active .hole{transform:scale(.94)}
-.ring{width:52px;height:52px;border-radius:50%;padding:3px;display:flex;align-items:center;justify-content:center}
-.cap{width:100%;height:100%;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.18);background-image:radial-gradient(circle at 32% 26%, rgba(255,255,255,.5), transparent 45%);background-blend-mode:overlay}
-.cap.wishlist{opacity:.62;box-shadow:0 2px 6px rgba(0,0,0,.45), inset 0 0 0 1.5px var(--bg3)}
-.hole.empty{background:radial-gradient(circle at 35% 30%, rgba(242,231,216,.03), var(--bg3) 72%)}
-.hole.empty::after{content:"";width:34px;height:34px;border-radius:50%;border:1.5px dashed var(--line2)}
-.clabel{font-size:9.5px;color:var(--cream-soft);text-align:center;line-height:1.25;max-width:76px}
-.clabel .cn{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-weight:700;color:var(--cream);font-size:10px}
-.clabel .cp{color:var(--faint);font-variant-numeric:tabular-nums;display:block;margin-top:1px}
+/* ---------- misc ---------- */
+.hint{margin:24px 0 0;padding:14px 16px;background:var(--cream);border-radius:3px;font-size:13px;color:var(--ink2);line-height:1.6}
+.hint b{color:var(--ink)}
+.empty{padding:40px 0;text-align:center;color:var(--ink2);font-size:14px;line-height:1.7}
+.empty b{color:var(--ink)}
+.foot{margin:34px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:11px;color:var(--faint);line-height:1.7}
+.foot code{font-size:10.5px}
+.err{margin:36px 0;padding:18px;border:1px solid var(--line-strong);border-radius:3px;font-size:14px;line-height:1.6}
+.err b{color:var(--accent)}
+.view{display:none}
+.view.on{display:block}
 
-.empty-state{text-align:center;color:var(--cream-soft);padding:52px 20px;font-size:14px;line-height:1.7}
-.empty-state b{color:var(--cream)}
-
-/* ---------- detail sheet ---------- */
-.backdrop{position:fixed;inset:0;background:rgba(10,6,4,.6);opacity:0;pointer-events:none;transition:opacity .22s;z-index:40}
-.backdrop.open{opacity:1;pointer-events:auto}
-.sheet{position:fixed;left:0;right:0;bottom:0;max-height:88vh;overflow-y:auto;background:var(--bg2);border:1px solid var(--line2);border-bottom:none;border-radius:20px 20px 0 0;padding:18px 18px calc(env(safe-area-inset-bottom) + 24px);transform:translateY(105%);transition:transform .28s cubic-bezier(.2,.8,.2,1);z-index:41;box-shadow:0 -20px 50px -20px rgba(0,0,0,.6)}
-.sheet.open{transform:translateY(0)}
-.sheet-grip{width:36px;height:4px;border-radius:3px;background:var(--line2);margin:0 auto 14px}
-.sheet-close{position:absolute;top:14px;right:14px;background:none;border:none;color:var(--faint);font-size:20px;cursor:pointer;line-height:1;padding:4px}
-.sd-top{display:flex;gap:14px;align-items:flex-start;padding-right:26px}
-.sd-hole{width:58px;height:58px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%, var(--clay-rim), var(--bg3) 72%);box-shadow:inset 0 5px 8px rgba(0,0,0,.5)}
-.sd-hole .ring{width:48px;height:48px}
-.sd-name{font-family:Archivo,sans-serif;font-weight:800;font-size:19px;line-height:1.15}
-.sd-winery{font-size:12px;color:var(--cream-soft);margin-top:3px}
-.sd-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
-.sd-tag{font-size:10.5px;padding:3px 9px;border:1px solid var(--line2);border-radius:20px;color:var(--cream-soft)}
-.sd-tag.score{background:var(--clay);color:var(--bg3);border-color:var(--clay);font-weight:700}
-.sd-desc{font-size:13.5px;line-height:1.65;color:var(--cream-soft);margin-top:14px}
-.sd-pair{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.sd-plab{font-size:11px;color:var(--cream-soft);background:var(--bg3);border:1px solid var(--line);border-radius:7px;padding:3px 8px}
-.sd-rate{display:flex;gap:5px;margin-top:16px;align-items:center}
-.dot5{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--faint);cursor:pointer;background:none;padding:0}
-.dot5.on{background:var(--clay);border-color:var(--clay)}
-.sd-rlabel{font-size:11px;color:var(--faint);margin-left:6px}
-.sd-rlabel .loc{color:var(--clay)}
-.sd-revert{margin-left:4px;color:var(--clay);font-size:11px;cursor:pointer;text-decoration:underline;background:none;border:none;padding:0}
-.note-lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:16px 0 6px}
-.note{width:100%;min-height:64px;resize:vertical;background:var(--bg3);color:var(--cream);border:1px solid var(--line2);border-radius:11px;padding:10px 11px;font-size:14px;font-family:inherit;outline:none}
-.note:focus{border-color:var(--clay)}
-
-/* ---------- legend ---------- */
-.legend{margin:30px 0 0;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
-.legend h3{margin:0 0 11px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);font-weight:700}
-.lrow{display:flex;flex-wrap:wrap;gap:9px 15px;font-size:12px;color:var(--cream-soft)}
-.lrow b{color:var(--cream);font-weight:600}
-.swatch{width:20px;height:20px;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:5px}
-.foot{margin:18px 2px 0;font-size:11px;color:var(--faint);line-height:1.7;text-align:center}
-
-.loading{text-align:center;padding:70px 20px;color:var(--cream-soft);font-size:15px}
-.err{max-width:520px;margin:40px auto;padding:20px;border:1px solid var(--line2);border-radius:14px;background:var(--bg2);color:var(--cream);line-height:1.6;font-size:14px}
-.err b{color:var(--w-red)}
-
-@media (min-width:640px){
-  .rack{gap:20px 14px}
-  .cubby{width:86px}
-  .hole{width:82px;height:82px}
-  .ring{width:60px;height:60px}
-  .hole.empty::after{width:40px;height:40px}
+@media (min-width:620px){
+  .wrap{max-width:760px}
+  .rname{font-size:15.5px}
+  .rsub{font-size:12.5px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="brand" id="eyebrow">Comunidad Valenciana</div>
-    <h1>El Botellero</h1>
-    <div class="sub" id="sub"></div>
+  <div class="brand"><b>Cata</b><span id="eyebrow"></span></div>
 
-    <div class="tagrow" id="tagrow"></div>
-    <div class="searchrow"><span class="ic">⌕</span><input id="search" type="search" placeholder="Vino, bodega o uva…" autocomplete="off"></div>
-    <button class="morelink" id="filterToggle">Más filtros — región, maridaje, orden ▾</button>
-    <div class="panel" id="panel"><div class="panel-inner">
-      <div class="grp-lbl">Región</div><div class="chips" id="regionChips"></div>
-      <div class="grp-lbl">Maridaje</div><div class="chips" id="dishChips"></div>
-      <div class="sortrow">
-        <select id="sort">
-          <option value="region">Ordenar: Región</option>
-          <option value="myrating">Mi valoración ↓</option>
-          <option value="score">Puntos crítica ↓</option>
-          <option value="price">Precio ↑</option>
-          <option value="name">Nombre A–Z</option>
-        </select>
-        <button class="reset" id="reset">Reiniciar</button>
-      </div>
-    </div></div>
+  <nav class="modes">
+    <button id="mFood" class="on">Zum Essen</button>
+    <button id="mCellar">Im Keller</button>
+  </nav>
 
-    <div class="tally" id="tally"></div>
-  </header>
+  <!-- ============ MODE 1: food ============ -->
+  <section class="view on" id="foodView">
+    <h1>Wozu passt<br><em>es heute?</em></h1>
+    <div class="lede">Gericht antippen — du siehst zuerst, was du selbst da hast.</div>
+    <div class="dishes" id="dishes"></div>
+    <div id="foodResults"></div>
+  </section>
 
-  <div class="count" id="count"></div>
-  <div id="shelves"></div>
-
-  <div class="legend">
-    <h3>Cómo leer el botellero</h3>
-    <div class="lrow">
-      <span><span class="swatch" style="background:radial-gradient(circle at 35% 30%,var(--clay-rim),var(--bg3) 72%);box-shadow:inset 0 0 0 1.5px dashed var(--line2)"></span><b>Hueco vacío</b> · aún no está en tu bodega</span>
-      <span><span class="swatch" style="background:var(--w-red)"></span><b>Cápsula de color</b> · en bodega (color = tipo de vino)</span>
-      <span><span class="swatch" style="background:conic-gradient(var(--cream) 70%, transparent 0)"></span><b>Anillo dorado</b> · tu valoración (más ancho = más estrellas)</span>
+  <!-- ============ MODE 2: cellar ============ -->
+  <section class="view" id="cellarView">
+    <h1>Was hab<br><em>ich da?</em></h1>
+    <div class="scope">
+      <button id="scopeMine" class="on">Nur meine</button>
+      <button id="scopeAll">Alle</button>
     </div>
-    <div class="lrow" id="legendWine" style="margin-top:12px"></div>
-    <div class="lrow" id="legendRegion" style="margin-top:12px"></div>
-  </div>
+    <div class="searchrow"><span class="ic">⌕</span><input id="search" type="search" placeholder="Wein, Bodega oder Traube…" autocomplete="off"></div>
+    <div class="typefilters" id="typeFilters"></div>
+    <div class="metarow">
+      <span id="count"></span>
+      <button class="reset" id="reset">zurücksetzen</button>
+      <select id="sort">
+        <option value="region">nach Region</option>
+        <option value="myrating">meine Bewertung</option>
+        <option value="score">Kritiker-Punkte</option>
+        <option value="price">Preis aufsteigend</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+    <div id="cellarResults"></div>
+  </section>
+
   <div class="foot" id="foot"></div>
 </div>
 
-<div class="backdrop" id="backdrop"></div>
-<div class="sheet" id="sheet" role="dialog" aria-modal="true">
-  <div class="sheet-grip"></div>
-  <button class="sheet-close" id="sheetClose" aria-label="Cerrar">✕</button>
-  <div id="sheetBody"></div>
-</div>
-
 <script>
-const DISHES=[["🍷","Solo"],["🍕","Pizza"],["🍝","Pasta"],["🍖","Grill"],["🥘","Paella"],["🦐","Fisch & Meer"],["🧀","Käse"]];
+const DISHES=[["🍷","Solo"],["🍕","Pizza"],["🍝","Pasta"],["🍖","Grill"],["🥘","Paella"],["🦐","Fisch"],["🧀","Käse"]];
 const FOODLABEL={"🍷":"Solo / leicht","🍕":"Pizza","🍝":"Pasta","🍖":"Grill / Asado","🥘":"Paella (Fleisch)","🦐":"Fisch & Meer","🧀":"Käse","🥗":"Gemüse / leicht","🍮":"Dessert"};
-const TYPES=[["red","Tinto"],["white","Blanco"],["rose","Rosado"],["natur","Natural"],["sweet","Dulce"]];
-const TYPE_LABEL={red:"Tinto",white:"Blanco",rose:"Rosado",natur:"Natural",sweet:"Dulce"};
+const TYPES=[["red","Rot"],["white","Weiß"],["rose","Rosé"],["natur","Natur"],["sweet","Süß"]];
 const TYPE_VAR={red:"--w-red",white:"--w-white",rose:"--w-rose",natur:"--w-natur",sweet:"--w-sweet"};
-const TYPE_ORDER={white:0,rose:1,natur:2,red:3,sweet:4};
 
-let DOC=null, WINES=[], REGIONS={}, regionColor={};
-let activeFood=new Set(),activeRegion=new Set(),activeType=new Set(),ownedOnly=false,ratedOnly=false,query="",sortMode="region";
-let openSheetId=null;
+let DOC=null,WINES=[],REGIONS={},regionColor={};
+let mode="food",activeDish=null;
+let scope="mine",activeType=new Set(),query="",sortMode="region";
+let openIds=new Set();
 
-// ---- personal overrides (per device) layered over Claude-maintained values ----
-const local={get:id=>{try{return JSON.parse(localStorage.getItem("wein_"+id)||"{}")}catch(e){return{}}},set:(id,v)=>{try{localStorage.setItem("wein_"+id,JSON.stringify(v))}catch(e){}}};
-function effRating(w){const l=local.get(w.id);return (l.rating!=null)?l.rating:(w.rating||0)}
-function effNote(w){const l=local.get(w.id);return (l.note!=null)?l.note:(w.note||"")}
-function isLocal(w){const l=local.get(w.id);return l.rating!=null||l.note!=null}
+// ---- personal overrides (per device) layered over the maintained values ----
+const local={
+  get:id=>{try{return JSON.parse(localStorage.getItem("wein_"+id)||"{}")}catch(e){return{}}},
+  set:(id,v)=>{try{localStorage.setItem("wein_"+id,JSON.stringify(v))}catch(e){}}
+};
+const effRating=w=>{const l=local.get(w.id);return l.rating!=null?l.rating:(w.rating||0)};
+const effNote=w=>{const l=local.get(w.id);return l.note!=null?l.note:(w.note||"")};
+const isLocal=w=>{const l=local.get(w.id);return l.rating!=null||l.note!=null};
 
-// ---- region colors (data-driven; new Spanish regions auto-get a stable ceramic hue) ----
 const CERAMIC=["#C08A2E","#2E7D74","#BC5237","#3E6DA6","#8A6D3B","#9C5A8C","#5A8C57","#B07A2A","#4C7E8A","#A84B3A"];
 function hashHue(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h}
-function colorFor(key){
-  if(regionColor[key])return regionColor[key];
-  const meta=REGIONS[key];
-  let c = meta&&meta.color ? meta.color : CERAMIC[hashHue(key)%CERAMIC.length];
-  regionColor[key]=c;return c;
+function colorFor(k){
+  if(regionColor[k])return regionColor[k];
+  const m=REGIONS[k];
+  return regionColor[k]=(m&&m.color)?m.color:CERAMIC[hashHue(k)%CERAMIC.length];
 }
-function regionName(key){return (REGIONS[key]&&REGIONS[key].name)||key}
-function regionDO(key){return (REGIONS[key]&&REGIONS[key].do)||""}
-
-function typeColor(t){return getComputedStyle(document.documentElement).getPropertyValue(TYPE_VAR[t]||"--faint").trim()||"#7a6b5c"}
+const regionName=k=>(REGIONS[k]&&REGIONS[k].name)||k;
+const regionDO=k=>(REGIONS[k]&&REGIONS[k].do)||"";
+const scoreNum=w=>{const m=(w.score||"").match(/\d{2,3}/);return m?+m[0]:0};
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 // ---------------- load ----------------
-fetch("wines.json?v="+Date.now()).then(r=>{if(!r.ok)throw 0;return r.json()}).then(doc=>{
-  DOC=doc;WINES=doc.wines||[];REGIONS=doc.regions||{};
-  boot();
-}).catch(()=>{
-  document.getElementById("shelves").innerHTML="";
-  document.querySelector(".wrap").insertAdjacentHTML("beforeend",
-   '<div class="err"><b>Weinliste nicht gefunden.</b><br>Die App lädt <code>wines.json</code> aus demselben Ordner. Das funktioniert live über GitHub&nbsp;Pages (oder einen lokalen Server). Beim reinen Doppelklick auf die Datei blockiert der Browser das Laden.</div>');
-});
+fetch("wines.json?v="+Date.now())
+  .then(r=>{if(!r.ok)throw 0;return r.json()})
+  .then(doc=>{DOC=doc;WINES=doc.wines||[];REGIONS=doc.regions||{};boot()})
+  .catch(()=>{
+    document.querySelector(".wrap").insertAdjacentHTML("beforeend",
+      '<div class="err"><b>Weinliste nicht gefunden.</b><br>Die App lädt <code>wines.json</code> aus demselben Ordner. Das funktioniert über GitHub&nbsp;Pages oder einen lokalen Server — beim reinen Doppelklick auf die Datei blockiert der Browser das Laden.</div>');
+  });
 
 function boot(){
-  document.getElementById("eyebrow").textContent=(DOC.meta&&DOC.meta.subtitle)||"España";
-  buildTagRow();buildRegionChips();buildDishChips();buildLegend();
-  document.getElementById("search").oninput=e=>{query=e.target.value.toLowerCase().trim();render()};
-  document.getElementById("sort").onchange=e=>{sortMode=e.target.value;render()};
-  document.getElementById("filterToggle").onclick=()=>{document.getElementById("panel").classList.toggle("open")};
-  document.getElementById("reset").onclick=resetAll;
-  document.getElementById("backdrop").onclick=closeSheet;
-  document.getElementById("sheetClose").onclick=closeSheet;
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
-  render();
+  const m=DOC.meta||{};
+  document.getElementById("eyebrow").textContent="· "+(m.subtitle||"España");
+  document.getElementById("foot").innerHTML=
+    `${m.owned||0} im Keller · ${m.total||WINES.length} Weine · Stand ${esc(m.updated||"")}<br>`+
+    `Bewertungen und Notizen liegen nur auf diesem Gerät (mit „lokal" markiert). Alles andere kommt aus <code>wines.json</code>.`;
+
+  buildDishes();buildTypeFilters();
+
+  document.getElementById("mFood").onclick=()=>setMode("food");
+  document.getElementById("mCellar").onclick=()=>setMode("cellar");
+  document.getElementById("scopeMine").onclick=()=>{scope="mine";syncScope();renderCellar()};
+  document.getElementById("scopeAll").onclick=()=>{scope="all";syncScope();renderCellar()};
+  document.getElementById("search").oninput=e=>{query=e.target.value.toLowerCase().trim();renderCellar()};
+  document.getElementById("sort").onchange=e=>{sortMode=e.target.value;renderCellar()};
+  document.getElementById("reset").onclick=resetCellar;
+
+  renderFood();renderCellar();
 }
 
-function buildTagRow(){
-  const el=document.getElementById("tagrow");el.innerHTML="";
-  const mk=(label,dotColor,onClick,initialOn)=>{
-    const w=document.createElement("span");w.className="etiqueta"+(initialOn?" on":"");
-    const b=document.createElement("button");b.className="tbtn";
-    b.innerHTML=(dotColor?`<span class="dot" style="background:${dotColor}"></span>`:"")+label;
-    b.onclick=()=>{const on=onClick();w.classList.toggle("on",on);render()};
-    w.appendChild(b);el.appendChild(w);
-  };
-  mk("En bodega",null,()=>{ownedOnly=!ownedOnly;return ownedOnly});
-  mk("Valorado",null,()=>{ratedOnly=!ratedOnly;return ratedOnly});
+function setMode(m){
+  mode=m;
+  document.getElementById("mFood").classList.toggle("on",m==="food");
+  document.getElementById("mCellar").classList.toggle("on",m==="cellar");
+  document.getElementById("foodView").classList.toggle("on",m==="food");
+  document.getElementById("cellarView").classList.toggle("on",m==="cellar");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function syncScope(){
+  document.getElementById("scopeMine").classList.toggle("on",scope==="mine");
+  document.getElementById("scopeAll").classList.toggle("on",scope==="all");
+}
+
+function buildDishes(){
+  const el=document.getElementById("dishes");el.innerHTML="";
+  DISHES.forEach(([emo,lbl])=>{
+    const b=document.createElement("button");b.className="dish";
+    b.innerHTML=`<span class="emo">${emo}</span><span class="lbl">${lbl}</span>`;
+    b.onclick=()=>{
+      activeDish=(activeDish===emo)?null:emo;
+      [...el.children].forEach(c=>c.classList.remove("on"));
+      if(activeDish)b.classList.add("on");
+      renderFood();
+    };
+    el.appendChild(b);
+  });
+}
+function buildTypeFilters(){
+  const el=document.getElementById("typeFilters");el.innerHTML="";
   const present=new Set(WINES.map(w=>w.type));
   TYPES.filter(([k])=>present.has(k)).forEach(([k,l])=>{
-    mk(l,`var(${TYPE_VAR[k]})`,()=>{tog(activeType,k);return activeType.has(k)});
-  });
-}
-function buildRegionChips(){
-  const el=document.getElementById("regionChips");el.innerHTML="";
-  const keys=[...new Set(WINES.map(w=>w.region))].sort((a,b)=>regionName(a).localeCompare(regionName(b)));
-  keys.forEach(k=>{
-    const b=document.createElement("button");b.className="chip";
-    b.innerHTML=`<span class="rdot" style="background:${colorFor(k)}"></span>${regionName(k)}`;
-    b.onclick=()=>{tog(activeRegion,k);b.classList.toggle("on",activeRegion.has(k));render()};
+    const b=document.createElement("button");b.className="tf";
+    b.innerHTML=`<span class="sw" style="background:var(${TYPE_VAR[k]})"></span>${l}`;
+    b.onclick=()=>{
+      activeType.has(k)?activeType.delete(k):activeType.add(k);
+      b.classList.toggle("on",activeType.has(k));
+      renderCellar();
+    };
     el.appendChild(b);
   });
 }
-function buildDishChips(){
-  const el=document.getElementById("dishChips");el.innerHTML="";
-  DISHES.forEach(([e,l])=>{
-    const b=document.createElement("button");b.className="chip";b.textContent=e+" "+l;
-    b.onclick=()=>{tog(activeFood,e);b.classList.toggle("on",activeFood.has(e));render()};
-    el.appendChild(b);
-  });
-}
-function tog(s,k){s.has(k)?s.delete(k):s.add(k)}
-function resetAll(){
-  activeFood.clear();activeRegion.clear();activeType.clear();ownedOnly=false;ratedOnly=false;query="";sortMode="region";
-  document.getElementById("search").value="";document.getElementById("sort").value="region";
-  document.querySelectorAll(".etiqueta.on,.chip.on").forEach(c=>c.classList.remove("on"));
-  render();
+function resetCellar(){
+  activeType.clear();query="";sortMode="region";scope="mine";
+  document.getElementById("search").value="";
+  document.getElementById("sort").value="region";
+  document.querySelectorAll(".tf.on").forEach(c=>c.classList.remove("on"));
+  syncScope();renderCellar();
 }
 
-// ---------------- filter + sort ----------------
-const scoreNum=w=>{const m=(w.score||"").match(/\d{2,3}/);return m?+m[0]:0};
-function filtered(){
+// ---------------- row rendering ----------------
+function row(w){
+  const rating=effRating(w);
+  const el=document.createElement("article");
+  el.className="row t-"+w.type+(w.owned?" owned":"")+(openIds.has(w.id)?" open":"");
+  el.dataset.id=w.id;
+
+  const dots=rating?`<span class="rdots">${'<i></i>'.repeat(rating)}</span>`:"";
+  const score=(!rating&&w.score)?`<span class="rscore">${esc(w.score)}</span>`:"";
+  const sub=[w.w,w.grape].filter(Boolean).map(esc).join(" · ");
+
+  el.innerHTML=
+    `<button class="rowhead">
+       <span class="stripe"></span>
+       <span class="rmain"><span class="rname">${esc(w.n)}</span><span class="rsub">${sub}</span></span>
+       <span class="rright"><span class="rprice">${esc(w.price||"")}</span>${dots||score}</span>
+     </button>
+     <div class="rdetail"></div>`;
+
+  el.querySelector(".rowhead").onclick=()=>{
+    const nowOpen=!openIds.has(w.id);
+    nowOpen?openIds.add(w.id):openIds.delete(w.id);
+    el.classList.toggle("open",nowOpen);
+    if(nowOpen)fillDetail(el,w);
+  };
+  if(openIds.has(w.id))fillDetail(el,w);
+  return el;
+}
+
+function fillDetail(el,w){
+  const d=el.querySelector(".rdetail");
+  const rating=effRating(w),note=effNote(w),loc=isLocal(w);
+  const tags=[
+    w.score?`<span class="dtag score">${esc(w.score)}</span>`:"",
+    `<span class="dtag">${esc(regionName(w.region))}</span>`,
+    w.owned?`<span class="dtag">im Keller</span>`:"",
+    ...(w.pills||[]).map(p=>`<span class="dtag">${esc(p)}</span>`)
+  ].join("");
+  const pairs=(w.food||[]).map(f=>`<span class="plab">${f} ${esc(FOODLABEL[f]||"")}</span>`).join("");
+
+  d.innerHTML=
+    `<div class="desc">${esc(w.desc||"")}</div>
+     ${pairs?`<div class="pairs">${pairs}</div>`:""}
+     <div class="dmeta">${tags}</div>
+     <div class="rate">
+       <span class="stars">${[1,2,3,4,5].map(i=>`<button class="st ${i<=rating?"on":""}" data-v="${i}" aria-label="${i} von 5"></button>`).join("")}</span>
+       <span class="rlabel">${rating?`${rating}/5${loc?' <span class="loc">· lokal</span>':""}`:"noch nicht bewertet"}${loc?'<button class="revert">zurücksetzen</button>':""}</span>
+     </div>
+     <div class="note-lbl">Meine Notiz</div>
+     <textarea class="note" placeholder="Eigene Verkostungsnotiz…">${esc(note)}</textarea>`;
+
+  d.querySelectorAll(".st").forEach(st=>st.onclick=()=>{
+    const v=+st.dataset.v,l=local.get(w.id);
+    l.rating=(effRating(w)===v)?0:v;local.set(w.id,l);
+    refreshRow(w);
+  });
+  const rev=d.querySelector(".revert");
+  if(rev)rev.onclick=()=>{localStorage.removeItem("wein_"+w.id);refreshRow(w)};
+  d.querySelector(".note").oninput=e=>{const l=local.get(w.id);l.note=e.target.value;local.set(w.id,l)};
+}
+
+// Re-render just this wine's row(s) in place, keeping scroll position.
+function refreshRow(w){
+  document.querySelectorAll('.row[data-id="'+CSS.escape(w.id)+'"]').forEach(old=>{
+    old.replaceWith(row(w));
+  });
+}
+
+function group(title,countLabel,wines){
+  const frag=document.createDocumentFragment();
+  const h=document.createElement("div");h.className="ghead";
+  h.innerHTML=`<span class="gn">${esc(title)}</span><span class="gc">${esc(countLabel)}</span>`;
+  frag.appendChild(h);
+  wines.forEach(w=>frag.appendChild(row(w)));
+  return frag;
+}
+
+// ---------------- mode 1: food ----------------
+function renderFood(){
+  const el=document.getElementById("foodResults");el.innerHTML="";
+  if(!activeDish){
+    el.innerHTML='<div class="hint">Noch kein Gericht gewählt. Tippe oben an, was es heute gibt — oder nimm <b>🍷 Solo</b>, wenn du einfach nur ein Glas trinken willst.</div>';
+    return;
+  }
+  const matches=WINES.filter(w=>(w.food||[]).includes(activeDish));
+  if(!matches.length){
+    el.innerHTML='<div class="empty"><b>Dazu ist nichts eingetragen.</b><br>Probier ein anderes Gericht.</div>';
+    return;
+  }
+  const byRating=(a,b)=>effRating(b)-effRating(a)||scoreNum(b)-scoreNum(a)||a.priceNum-b.priceNum;
+  const mine=matches.filter(w=>w.owned).sort(byRating);
+  const rest=matches.filter(w=>!w.owned).sort(byRating);
+
+  if(mine.length)el.appendChild(group("Hast du da",mine.length+(mine.length===1?" Wein":" Weine"),mine));
+  else el.insertAdjacentHTML("beforeend",'<div class="hint">Dazu hast du gerade <b>nichts im Keller</b> — hier ist, was passen würde.</div>');
+  if(rest.length)el.appendChild(group("Passt auch","nicht im Keller · "+rest.length,rest));
+}
+
+// ---------------- mode 2: cellar ----------------
+function cellarList(){
   return WINES.filter(w=>{
-    if(ownedOnly&&!w.owned)return false;
-    if(ratedOnly&&!effRating(w))return false;
-    if(activeRegion.size&&!activeRegion.has(w.region))return false;
+    if(scope==="mine"&&!w.owned)return false;
     if(activeType.size&&!activeType.has(w.type))return false;
-    if(activeFood.size&&![...activeFood].some(f=>w.food.includes(f)))return false;
     if(query&&!((w.n+" "+w.w+" "+w.grape).toLowerCase().includes(query)))return false;
     return true;
   });
 }
-function sortWines(a){a=[...a];
+function sortWines(a){
+  a=[...a];
   if(sortMode==="myrating")a.sort((x,y)=>effRating(y)-effRating(x)||scoreNum(y)-scoreNum(x));
   else if(sortMode==="score")a.sort((x,y)=>scoreNum(y)-scoreNum(x));
   else if(sortMode==="price")a.sort((x,y)=>x.priceNum-y.priceNum);
   else if(sortMode==="name")a.sort((x,y)=>x.n.localeCompare(y.n));
-  else a.sort((x,y)=>regionName(x.region).localeCompare(regionName(y.region))||(y.owned-x.owned)||x.w.localeCompare(y.w));
+  else a.sort((x,y)=>regionName(x.region).localeCompare(regionName(y.region))||(y.owned-x.owned)||x.n.localeCompare(y.n));
   return a;
 }
+function renderCellar(){
+  const el=document.getElementById("cellarResults");el.innerHTML="";
+  const arr=sortWines(cellarList());
+  document.getElementById("count").textContent=arr.length+(arr.length===1?" Wein":" Weine");
 
-// ---------------- render ----------------
-const shelvesEl=document.getElementById("shelves"),countEl=document.getElementById("count");
-function render(){
-  renderTally();
-  const arr=sortWines(filtered());shelvesEl.innerHTML="";
-  countEl.textContent=arr.length+" "+(arr.length===1?"vino":"vinos");
-  if(!arr.length){shelvesEl.innerHTML='<div class="empty-state"><b>Ningún hueco coincide.</b><br>Toca „Reiniciar" en los filtros.</div>';return}
+  if(!arr.length){
+    el.innerHTML='<div class="empty"><b>Kein Wein passt.</b><br>Tippe auf „zurücksetzen".</div>';
+    return;
+  }
   if(sortMode==="region"){
     const keys=[...new Set(arr.map(w=>w.region))].sort((a,b)=>regionName(a).localeCompare(regionName(b)));
-    keys.forEach(k=>shelvesEl.appendChild(shelf(regionName(k),regionDO(k),arr.filter(w=>w.region===k))));
+    keys.forEach(k=>{
+      const ws=arr.filter(w=>w.region===k);
+      el.appendChild(group(regionName(k),regionDO(k)||ws.length+" Weine",ws));
+    });
   }else{
-    shelvesEl.appendChild(shelf("Tu colección","",arr));
+    el.appendChild(group(scope==="mine"?"Mein Keller":"Alle Weine",arr.length+" Weine",arr));
   }
-  if(openSheetId){
-    const w=WINES.find(x=>x.id===openSheetId);
-    if(w&&arr.includes(w))fillSheet(w);else closeSheet();
-  }
-}
-function shelf(name,sub,wines){
-  const s=document.createElement("div");s.className="shelf";
-  s.innerHTML=`<div class="shelf-lbl"><span class="rn">${name}</span>${sub?`<span class="rc">${sub}</span>`:""}<span class="plank"></span></div>`;
-  const rack=document.createElement("div");rack.className="rack";
-  wines.forEach(w=>rack.appendChild(cubby(w)));
-  s.appendChild(rack);
-  return s;
-}
-function capRing(w){
-  // ring = rating halo (conic-gradient of cream, transparent past pct); cap = solid type color, always visible.
-  const rating=effRating(w),tc=`var(${TYPE_VAR[w.type]||"--faint"})`,pct=rating*20;
-  const ringBg=pct>0?`conic-gradient(var(--cream) ${pct}%, transparent ${pct}% 100%)`:"none";
-  return `<div class="ring" style="background:${ringBg}"><div class="cap${w.owned?"":" wishlist"}" style="background-color:${tc}"></div></div>`;
-}
-function cubby(w){
-  const b=document.createElement("button");b.className="cubby";b.dataset.id=w.id;
-  const rating=effRating(w);
-  const holeHTML=(w.owned||rating>0)
-    ? `<div class="hole">${capRing(w)}</div>`
-    : `<div class="hole empty"></div>`;
-  b.innerHTML=`${holeHTML}<div class="clabel"><span class="cn">${w.n}</span><span class="cp">${w.price||""}</span></div>`;
-  b.onclick=()=>openSheet(w);
-  return b;
-}
-function renderTally(){
-  const owned=WINES.filter(w=>w.owned);
-  const rated=WINES.filter(w=>effRating(w)>0);
-  const top=rated.slice().sort((a,b)=>effRating(b)-effRating(a))[0];
-  const el=document.getElementById("tally");
-  el.innerHTML=
-    `<div><b>${owned.length}</b>en bodega</div>
-     <div><b>${rated.length}</b>valorados</div>
-     <div><b>${WINES.length}</b>total</div>`+
-    (top?`<div class="fav"><span class="lbl">favorito</span><span class="name">${top.n}</span></div>`:"");
-}
-
-// ---------------- detail sheet ----------------
-function openSheet(w){
-  openSheetId=w.id;
-  fillSheet(w);
-  document.getElementById("backdrop").classList.add("open");
-  document.getElementById("sheet").classList.add("open");
-  document.body.style.overflow="hidden";
-}
-function closeSheet(){
-  openSheetId=null;
-  document.getElementById("backdrop").classList.remove("open");
-  document.getElementById("sheet").classList.remove("open");
-  document.body.style.overflow="";
-}
-function fillSheet(w){
-  const rating=effRating(w),note=effNote(w),loc=isLocal(w);
-  const capHTML=(w.owned||rating>0)
-    ? `<div class="sd-hole">${capRing(w)}</div>`
-    : `<div class="sd-hole"></div>`;
-  const score=w.score?`<span class="sd-tag score">${w.score}</span>`:"";
-  const pills=(w.pills||[]).map(p=>`<span class="sd-tag">${p}</span>`).join("");
-  const pairLabels=w.food.map(f=>`<span class="sd-plab">${f} ${FOODLABEL[f]||""}</span>`).join("");
-  const body=document.getElementById("sheetBody");
-  body.innerHTML=
-   `<div class="sd-top">${capHTML}<div><div class="sd-name">${w.n}</div><div class="sd-winery">${w.w} · ${regionName(w.region)}</div></div></div>
-    <div class="sd-meta"><span class="sd-tag">${w.price||""}</span><span class="sd-tag">${w.grape||""}</span>${score}${pills}${w.owned?'<span class="sd-tag">en bodega</span>':""}</div>
-    <div class="sd-desc">${w.desc||""}</div>
-    ${pairLabels?`<div class="sd-pair">${pairLabels}</div>`:""}
-    <div class="sd-rate">${[1,2,3,4,5].map(i=>`<button class="dot5 ${i<=rating?"on":""}" data-v="${i}" aria-label="${i} von 5"></button>`).join("")}
-      <span class="sd-rlabel">${rating?`${rating}/5${loc?' <span class="loc">· lokal</span>':''}`:"noch nicht bewertet"}${loc?' <button class="sd-revert">↺ zurück</button>':''}</span></div>
-    <div class="note-lbl">Meine Notiz</div>
-    <textarea class="note" placeholder="Eigene Verkostungsnotiz…">${(note||"").replace(/</g,"&lt;")}</textarea>`;
-  body.querySelectorAll(".dot5").forEach(dot=>dot.addEventListener("click",()=>{
-    const v=+dot.dataset.v;const l=local.get(w.id);
-    l.rating=(effRating(w)===v)?0:v;local.set(w.id,l);
-    fillSheet(w);renderCubby(w);renderTally();
-  }));
-  const rev=body.querySelector(".sd-revert");
-  if(rev)rev.addEventListener("click",()=>{localStorage.removeItem("wein_"+w.id);fillSheet(w);renderCubby(w);renderTally()});
-  const noteEl=body.querySelector(".note");
-  noteEl.addEventListener("input",()=>{const l=local.get(w.id);l.note=noteEl.value;local.set(w.id,l)});
-}
-function renderCubby(w){
-  const b=document.querySelector('.cubby[data-id="'+CSS.escape(w.id)+'"]');
-  if(!b)return;
-  const rating=effRating(w);
-  const hole=b.querySelector(".hole");
-  if(w.owned||rating>0){
-    hole.classList.remove("empty");
-    hole.innerHTML=capRing(w);
-  }else{
-    hole.innerHTML="";hole.classList.add("empty");
-  }
-}
-
-// ---------------- legend ----------------
-function buildLegend(){
-  document.getElementById("legendWine").innerHTML=TYPES.map(([k,l])=>`<span><span class="swatch" style="background:var(${TYPE_VAR[k]})"></span><b>${l}</b></span>`).join("");
-  const keys=[...new Set(WINES.map(w=>w.region))];
-  document.getElementById("legendRegion").innerHTML=keys.map(k=>`<span><span class="swatch" style="background:${colorFor(k)}"></span><b>${regionName(k)}</b></span>`).join("");
-  const m=DOC.meta||{};
-  document.getElementById("sub").textContent=`${m.owned||0} en bodega · ${m.total||WINES.length} vinos · actualizado ${m.updated||""}`;
-  document.getElementById("foot").innerHTML=`Valoraciones &amp; notas con „· lokal" viven solo en este dispositivo. El resto viene de <code>wines.json</code>.<br>Añadir a inicio: menú del navegador → „Añadir a pantalla de inicio".`;
 }
 </script>
 </body>
