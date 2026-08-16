@@ -21,11 +21,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 -->
 <style>
 :root{
-  --bg:#1c130f; --bg2:#241a14; --bg3:#150e0a;
-  --clay:#c06b3d; --clay-deep:#8a4726; --clay-rim:#6b3319;
+  --bg:#181009; --bg2:#241a14; --bg3:#120c07;
+  --clay:#c06b3d; --clay-deep:#8a4726; --clay-rim:#5a2c17;
   --cream:#f2e7d8; --cream-soft:#b8a795; --faint:#7a6b5c;
   --line:rgba(242,231,216,.12); --line2:rgba(242,231,216,.2);
-  --w-red:#b6394c; --w-white:#d9ac3d; --w-rose:#d97d5c; --w-natur:#b8792f; --w-sweet:#cb9c28;
+  --w-red:#e0435c; --w-white:#e8d34a; --w-rose:#ff8aa8; --w-natur:#e0973f; --w-sweet:#d98f1f;
   --shadow:0 10px 26px -14px rgba(0,0,0,.6);
   --r:16px;
 }
@@ -101,17 +101,18 @@ h1{font-family:Archivo,sans-serif;font-weight:900;font-size:clamp(30px,7vw,40px)
 .shelf-lbl .rn{font-family:Archivo,sans-serif;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--cream);white-space:nowrap}
 .shelf-lbl .rc{font-size:10.5px;color:var(--faint)}
 
-.rack{display:flex;flex-wrap:wrap;gap:16px 10px;padding:4px 0}
-.cubby{width:66px;flex:none;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;background:none;border:none;padding:0;color:inherit}
-.hole{width:66px;height:66px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--clay-rim), var(--bg3) 72%);box-shadow:inset 0 6px 10px rgba(0,0,0,.55), inset 0 -2px 3px rgba(242,231,216,.05);display:flex;align-items:center;justify-content:center;position:relative;transition:transform .12s}
+.rack{display:flex;flex-wrap:wrap;gap:18px 12px;padding:4px 0}
+.cubby{width:76px;flex:none;display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;background:none;border:none;padding:0;color:inherit}
+.hole{width:70px;height:70px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--clay-rim), var(--bg3) 72%);box-shadow:inset 0 6px 10px rgba(0,0,0,.55), inset 0 -2px 3px rgba(242,231,216,.05);display:flex;align-items:center;justify-content:center;position:relative;transition:transform .12s}
 .cubby:active .hole{transform:scale(.94)}
-.cap{width:40px;height:40px;border-radius:50%;box-shadow:0 2px 5px rgba(0,0,0,.4)}
-.cap.wishlist{box-shadow:0 2px 5px rgba(0,0,0,.4), inset 0 0 0 2px var(--bg3);opacity:.72}
+.ring{width:52px;height:52px;border-radius:50%;padding:3px;display:flex;align-items:center;justify-content:center}
+.cap{width:100%;height:100%;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.18);background-image:radial-gradient(circle at 32% 26%, rgba(255,255,255,.5), transparent 45%);background-blend-mode:overlay}
+.cap.wishlist{opacity:.62;box-shadow:0 2px 6px rgba(0,0,0,.45), inset 0 0 0 1.5px var(--bg3)}
 .hole.empty{background:radial-gradient(circle at 35% 30%, rgba(242,231,216,.03), var(--bg3) 72%)}
-.hole.empty::after{content:"";width:32px;height:32px;border-radius:50%;border:1.5px dashed var(--line2)}
-.clabel{font-size:9px;color:var(--cream-soft);text-align:center;line-height:1.25;max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.clabel .cn{display:block;font-weight:700;color:var(--cream);font-size:9.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.clabel .cp{color:var(--faint);font-variant-numeric:tabular-nums}
+.hole.empty::after{content:"";width:34px;height:34px;border-radius:50%;border:1.5px dashed var(--line2)}
+.clabel{font-size:9.5px;color:var(--cream-soft);text-align:center;line-height:1.25;max-width:76px}
+.clabel .cn{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-weight:700;color:var(--cream);font-size:10px}
+.clabel .cp{color:var(--faint);font-variant-numeric:tabular-nums;display:block;margin-top:1px}
 
 .empty-state{text-align:center;color:var(--cream-soft);padding:52px 20px;font-size:14px;line-height:1.7}
 .empty-state b{color:var(--cream)}
@@ -124,8 +125,8 @@ h1{font-family:Archivo,sans-serif;font-weight:900;font-size:clamp(30px,7vw,40px)
 .sheet-grip{width:36px;height:4px;border-radius:3px;background:var(--line2);margin:0 auto 14px}
 .sheet-close{position:absolute;top:14px;right:14px;background:none;border:none;color:var(--faint);font-size:20px;cursor:pointer;line-height:1;padding:4px}
 .sd-top{display:flex;gap:14px;align-items:flex-start;padding-right:26px}
-.sd-cap{width:52px;height:52px;border-radius:50%;flex:none;box-shadow:0 3px 8px rgba(0,0,0,.4)}
-.sd-hole{width:52px;height:52px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%, var(--clay-rim), var(--bg3) 72%);box-shadow:inset 0 5px 8px rgba(0,0,0,.5)}
+.sd-hole{width:58px;height:58px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%, var(--clay-rim), var(--bg3) 72%);box-shadow:inset 0 5px 8px rgba(0,0,0,.5)}
+.sd-hole .ring{width:48px;height:48px}
 .sd-name{font-family:Archivo,sans-serif;font-weight:800;font-size:19px;line-height:1.15}
 .sd-winery{font-size:12px;color:var(--cream-soft);margin-top:3px}
 .sd-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
@@ -157,11 +158,11 @@ h1{font-family:Archivo,sans-serif;font-weight:900;font-size:clamp(30px,7vw,40px)
 .err b{color:var(--w-red)}
 
 @media (min-width:640px){
-  .rack{gap:18px 12px}
-  .cubby{width:78px}
-  .hole{width:78px;height:78px}
-  .cap{width:48px;height:48px}
-  .hole.empty::after{width:38px;height:38px}
+  .rack{gap:20px 14px}
+  .cubby{width:86px}
+  .hole{width:82px;height:82px}
+  .ring{width:60px;height:60px}
+  .hole.empty::after{width:40px;height:40px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -201,7 +202,8 @@ h1{font-family:Archivo,sans-serif;font-weight:900;font-size:clamp(30px,7vw,40px)
     <h3>Cómo leer el botellero</h3>
     <div class="lrow">
       <span><span class="swatch" style="background:radial-gradient(circle at 35% 30%,var(--clay-rim),var(--bg3) 72%);box-shadow:inset 0 0 0 1.5px dashed var(--line2)"></span><b>Hueco vacío</b> · aún no está en tu bodega</span>
-      <span><span class="swatch" style="background:conic-gradient(var(--w-red) 70%, rgba(0,0,0,.5) 0)"></span><b>Cápsula llena</b> · en bodega, nivel = tu valoración</span>
+      <span><span class="swatch" style="background:var(--w-red)"></span><b>Cápsula de color</b> · en bodega (color = tipo de vino)</span>
+      <span><span class="swatch" style="background:conic-gradient(var(--cream) 70%, transparent 0)"></span><b>Anillo dorado</b> · tu valoración (más ancho = más estrellas)</span>
     </div>
     <div class="lrow" id="legendWine" style="margin-top:12px"></div>
     <div class="lrow" id="legendRegion" style="margin-top:12px"></div>
@@ -361,12 +363,17 @@ function shelf(name,sub,wines){
   s.appendChild(rack);
   return s;
 }
+function capRing(w){
+  // ring = rating halo (conic-gradient of cream, transparent past pct); cap = solid type color, always visible.
+  const rating=effRating(w),tc=`var(${TYPE_VAR[w.type]||"--faint"})`,pct=rating*20;
+  const ringBg=pct>0?`conic-gradient(var(--cream) ${pct}%, transparent ${pct}% 100%)`:"none";
+  return `<div class="ring" style="background:${ringBg}"><div class="cap${w.owned?"":" wishlist"}" style="background-color:${tc}"></div></div>`;
+}
 function cubby(w){
   const b=document.createElement("button");b.className="cubby";b.dataset.id=w.id;
-  const rating=effRating(w),tc=`var(${TYPE_VAR[w.type]||"--faint"})`;
-  const pct=rating*20;
+  const rating=effRating(w);
   const holeHTML=(w.owned||rating>0)
-    ? `<div class="hole"><div class="cap${w.owned?"":" wishlist"}" style="background:conic-gradient(${tc} ${pct}%, rgba(21,14,10,.55) 0)"></div></div>`
+    ? `<div class="hole">${capRing(w)}</div>`
     : `<div class="hole empty"></div>`;
   b.innerHTML=`${holeHTML}<div class="clabel"><span class="cn">${w.n}</span><span class="cp">${w.price||""}</span></div>`;
   b.onclick=()=>openSheet(w);
@@ -399,10 +406,9 @@ function closeSheet(){
   document.body.style.overflow="";
 }
 function fillSheet(w){
-  const rating=effRating(w),note=effNote(w),loc=isLocal(w),tc=`var(${TYPE_VAR[w.type]||"--faint"})`;
-  const pct=rating*20;
-  const capHTML=w.owned
-    ? `<div class="sd-cap" style="background:conic-gradient(${tc} ${pct}%, rgba(21,14,10,.55) 0)"></div>`
+  const rating=effRating(w),note=effNote(w),loc=isLocal(w);
+  const capHTML=(w.owned||rating>0)
+    ? `<div class="sd-hole">${capRing(w)}</div>`
     : `<div class="sd-hole"></div>`;
   const score=w.score?`<span class="sd-tag score">${w.score}</span>`:"";
   const pills=(w.pills||[]).map(p=>`<span class="sd-tag">${p}</span>`).join("");
@@ -430,12 +436,11 @@ function fillSheet(w){
 function renderCubby(w){
   const b=document.querySelector('.cubby[data-id="'+CSS.escape(w.id)+'"]');
   if(!b)return;
-  const rating=effRating(w),tc=`var(${TYPE_VAR[w.type]||"--faint"})`,pct=rating*20;
+  const rating=effRating(w);
   const hole=b.querySelector(".hole");
   if(w.owned||rating>0){
-    let cap=hole.querySelector(".cap");
-    if(!cap){hole.classList.remove("empty");cap=document.createElement("div");cap.className="cap"+(w.owned?"":" wishlist");hole.appendChild(cap)}
-    cap.style.background=`conic-gradient(${tc} ${pct}%, rgba(21,14,10,.55) 0)`;
+    hole.classList.remove("empty");
+    hole.innerHTML=capRing(w);
   }else{
     hole.innerHTML="";hole.classList.add("empty");
   }
